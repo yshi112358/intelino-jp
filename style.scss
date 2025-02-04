@@ -1,0 +1,489 @@
+$blue: #00AFD7;
+$red: #F9423A;
+$yellow: #FFD400;
+$black: #000000;
+$gray: #B2AEAE;
+$white: #FFFFFF;
+$header-height: 20vh;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: $blue;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: $header-height;
+    width: 100vw;
+    z-index: 100;
+
+    .header-inner {
+        margin: 10px;
+
+        background-color: $blue;
+        color: $white;
+        border-radius: 2vh;
+        // width: 85vh;
+        // height: 15vh;
+        width: 90vw;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between; //左右中央寄せ（要素が2つしかないためそれぞれが端に寄っている）
+        align-items: center;
+
+        .logo {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 5vh;
+
+            img {
+                display: block;
+                height: 5vh;
+                width: auto;
+            }
+        }
+
+        .global-nav {
+            margin: 0 5vh;
+
+            ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin: 0 1vh;
+
+                    a {
+                        font-weight: bold;
+                        color: $white;
+                        text-decoration: none;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 3vh;
+                        max-height: 10vh;
+                        white-space: nowrap;
+
+                        img {
+                            width: 1.5em;
+                            height: 1.5em;
+                            margin: 0 0.2em;
+                        }
+                    }
+
+                    .vertical-line {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 1vh;
+                        font-size: 2vh;
+
+                        img {
+                            height: 5vh;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+main {
+    position: absolute;
+
+    .main-inner {
+        scroll-snap-type: y mandatory;
+        position: absolute;
+        overflow-y: scroll;
+        scrollbar-width: none;
+        width: 100vw;
+        height: 100vh;
+
+
+        .top {
+            width: 100vw;
+            height: 100vh;
+            background-color: $blue;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            scroll-snap-align: end;
+
+            &-inner {
+                background-image: url('./img/intelino-video.webp');
+                background-size: cover;
+                background-position: bottom;
+                width: 80vw;
+                height: 70vh;
+                border-radius: 5vh;
+                margin-top: $header-height;
+                position: fixed;
+                z-index: 10;
+                pointer-events: none;
+                box-shadow: inset 2vh 2vh 2vh rgba($color: #000000, $alpha: 0.5),
+                    inset -2vh -2vh 2vh rgba($color: #000000, $alpha: 0.5);
+
+                &-text {
+                    margin: 5vh;
+
+                    h1 {
+                        display: block;
+                        white-space: nowrap;
+                        color: $yellow;
+                        font-size: 10vh;
+                        font-weight: bold;
+                        margin-bottom: 2vh;
+                    }
+
+                    p {
+                        display: block;
+                        white-space: nowrap;
+                        color: $white;
+                        font-size: 3vh;
+                        font-weight: regular;
+                        margin-bottom: 1vh;
+                        text-shadow: 0.1vh 0.1vh 1vh rgba($color: #000000, $alpha: 0.5),
+                            -0.1vh -0.1vh 1vh rgba($color: #000000, $alpha: 0.5);
+                        // background-color: $blue;
+                    }
+                }
+
+                &-cover {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black;
+                    position: absolute;
+                    top: 0;
+                    opacity: 0;
+                }
+
+            }
+        }
+
+        .about {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            scroll-snap-align: end;
+            background-color: $blue;
+
+            &-inner {
+                position: inherit;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &-text {
+                    position: absolute;
+                    top: 5vh+$header-height;
+                    z-index: 30;
+
+                    h1 {
+                        display: block;
+                        white-space: nowrap;
+                        color: $yellow;
+                        font-size: 10vh;
+                        font-weight: bold;
+                        margin-bottom: 3vh;
+                    }
+
+                    p {
+                        display: block;
+                        white-space: nowrap;
+                        color: $white;
+                        font-size: 3vh;
+                        font-weight: regular;
+                        margin-left: 1vw;
+                        margin-bottom: 2vh;
+                    }
+                }
+
+                &-img {
+                    width: 100vw;
+                    height: 100vh;
+                    background-image: url('./img/intelino-yellow.png');
+                    background-size: cover;
+                    background-position: bottom;
+                    position: fixed;
+                    pointer-events: none;
+                    top: 0;
+                    z-index: 20;
+                }
+
+                &-cover {
+                    display: block;
+                    width: 100vw;
+                    height: 100vh;
+                    top: 0;
+                    z-index: 10;
+                    pointer-events: none;
+
+                    &-detail {
+                        display: block;
+                        width: 100vw;
+                        height: 10vh;
+                        position: absolute;
+                        bottom: 10vh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &-background {
+                            display: block;
+                            width: 80vh;
+                            height: 13vh;
+                            background-color: $gray;
+                            position: absolute;
+                            border-radius: 2vh;
+
+                            &-button {
+                                display: block;
+                                position: absolute;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                bottom: 2vh;
+                                right: 2vh;
+                                font-size: 4vh;
+
+                                img {
+                                    width: 5vh;
+                                    height: 5vh;
+                                }
+                            }
+                        }
+                    }
+
+                    &-arrow {
+                        display: block;
+                        width: auto;
+                        height: 30vh;
+                        position: absolute;
+                        top: 42vh;
+                        bottom: 25vh;
+                        left: 62vw;
+                        right: 30vw;
+                    }
+                }
+            }
+        }
+
+        .learn {
+            width: 100vw;
+            height: 400vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            scroll-snap-align: start;
+
+            &-bg {
+                display: block;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: -10;
+                top: 0;
+                left: 0;
+
+                &-video {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    min-width: 100%;
+                    min-height: 100%;
+                    -o-object-fit: cover;
+                    object-fit: cover;
+                    -o-object-position: center;
+                    object-position: center;
+                    filter: blur(3px);
+                }
+
+                &-cover {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $black;
+                    opacity: 0.5;
+                }
+            }
+
+            &-inner {
+                display: block;
+                position: absolute;
+                width: 80vw;
+                height: 300vh;
+                top: 40vh+$header-height;
+
+                &-text {
+                    display: block;
+                    position: sticky;
+                    top: 5vh+$header-height;
+                    left: 5vh;
+                    z-index: 30;
+
+                    h1 {
+                        display: block;
+                        white-space: nowrap;
+                        color: $yellow;
+                        font-size: 10vh;
+                        font-weight: bold;
+                        margin-bottom: 3vh;
+                    }
+
+                    p {
+                        display: block;
+                        white-space: nowrap;
+                        color: $white;
+                        font-size: 3vh;
+                        font-weight: regular;
+                        margin-bottom: 2vh;
+                    }
+                }
+            }
+
+            &-inner2 {
+                position: absolute;
+                top: 100vh;
+                width: 50vw;
+                height: 300vh;
+                background-color: $blue;
+                right: 0;
+            }
+        }
+
+        $award_width: 96vw;
+        $award_inner_posion: (
+            100vw - $award_width)/2;
+
+        .classroom {
+            width: 100vw;
+            height: 70vh;
+            background-color: $yellow;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 30;
+            position: relative;
+            scroll-snap-align: start;
+
+            &-inner {
+                display: block;
+                position: absolute;
+                width: $award_width;
+                height: 70vh;
+                background-color: $blue;
+                border-radius: 5vh 5vh 0 0;
+                top: $award_inner_posion;
+            }
+        }
+
+        .achievements {
+            width: 100vw;
+            height: 140vw;
+            background-color: $yellow;
+            z-index: 30;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-align: end;
+
+            &-inner {
+                display: block;
+                position: absolute;
+                width: 96vw;
+                height: 136vw;
+                background-color: $blue;
+                border-radius: 5vh;
+
+                &-world {
+                    position: relative;
+                    margin-top: $header-height;
+
+                    h1 {
+                        display: block;
+                        white-space: nowrap;
+                        color: $yellow;
+                        font-size: 10vh;
+                        font-weight: bold;
+                        margin-bottom: 3vh;
+                    }
+
+                    p {
+                        display: block;
+                        white-space: nowrap;
+                        color: $white;
+                        font-size: 3vh;
+                        font-weight: regular;
+                        margin-bottom: 2vh;
+                    }
+                }
+                &-award{
+                    position: relative;
+                    margin-top: $header-height;
+
+                    h1 {
+                        display: block;
+                        white-space: nowrap;
+                        color: $yellow;
+                        font-size: 10vh;
+                        font-weight: bold;
+                        margin-bottom: 3vh;
+                    }
+
+                    p {
+                        display: block;
+                        white-space: nowrap;
+                        color: $white;
+                        font-size: 3vh;
+                        font-weight: regular;
+                        margin-bottom: 2vh;
+                    }
+                }
+            }
+        }
+
+        .purchase {
+            width: 100vw;
+            height: 100vh;
+            background-color: $blue;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 30;
+            position: relative;
+            scroll-snap-align: end;
+        }
+
+        .contact {
+            width: 100vw;
+            height: 100vh;
+            background-color: $blue;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            z-index: 30;
+            position: relative;
+            scroll-snap-align: end;
+        }
+    }
+}

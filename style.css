@@ -1,0 +1,419 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #00AFD7;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 20vh;
+  width: 100vw;
+  z-index: 100;
+}
+header .header-inner {
+  margin: 10px;
+  background-color: #00AFD7;
+  color: #FFFFFF;
+  border-radius: 2vh;
+  width: 90vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-inner .logo {
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 5vh;
+}
+header .header-inner .logo img {
+  display: block;
+  height: 5vh;
+  width: auto;
+}
+header .header-inner .global-nav {
+  margin: 0 5vh;
+}
+header .header-inner .global-nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header .header-inner .global-nav ul li {
+  margin: 0 1vh;
+}
+header .header-inner .global-nav ul li a {
+  font-weight: bold;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  max-height: 10vh;
+  white-space: nowrap;
+}
+header .header-inner .global-nav ul li a img {
+  width: 1.5em;
+  height: 1.5em;
+  margin: 0 0.2em;
+}
+header .header-inner .global-nav ul li .vertical-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1vh;
+  font-size: 2vh;
+}
+header .header-inner .global-nav ul li .vertical-line img {
+  height: 5vh;
+}
+
+main {
+  position: absolute;
+}
+main .main-inner {
+  scroll-snap-type: y mandatory;
+  position: absolute;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 100vw;
+  height: 100vh;
+}
+main .main-inner .top {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00AFD7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  scroll-snap-align: end;
+}
+main .main-inner .top-inner {
+  background-image: url("./img/intelino-video.webp");
+  background-size: cover;
+  background-position: bottom;
+  width: 80vw;
+  height: 70vh;
+  border-radius: 5vh;
+  margin-top: 20vh;
+  position: fixed;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: inset 2vh 2vh 2vh rgba(0, 0, 0, 0.5), inset -2vh -2vh 2vh rgba(0, 0, 0, 0.5);
+}
+main .main-inner .top-inner-text {
+  margin: 5vh;
+}
+main .main-inner .top-inner-text h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 2vh;
+}
+main .main-inner .top-inner-text p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-bottom: 1vh;
+  text-shadow: 0.1vh 0.1vh 1vh rgba(0, 0, 0, 0.5), -0.1vh -0.1vh 1vh rgba(0, 0, 0, 0.5);
+}
+main .main-inner .top-inner-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+}
+main .main-inner .about {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: end;
+  background-color: #00AFD7;
+}
+main .main-inner .about-inner {
+  position: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .main-inner .about-inner-text {
+  position: absolute;
+  top: 25vh;
+  z-index: 30;
+}
+main .main-inner .about-inner-text h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+main .main-inner .about-inner-text p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+}
+main .main-inner .about-inner-img {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("./img/intelino-yellow.png");
+  background-size: cover;
+  background-position: bottom;
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  z-index: 20;
+}
+main .main-inner .about-inner-cover {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+main .main-inner .about-inner-cover-detail {
+  display: block;
+  width: 100vw;
+  height: 10vh;
+  position: absolute;
+  bottom: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .main-inner .about-inner-cover-detail-background {
+  display: block;
+  width: 80vh;
+  height: 13vh;
+  background-color: #B2AEAE;
+  position: absolute;
+  border-radius: 2vh;
+}
+main .main-inner .about-inner-cover-detail-background-button {
+  display: block;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2vh;
+  right: 2vh;
+  font-size: 4vh;
+}
+main .main-inner .about-inner-cover-detail-background-button img {
+  width: 5vh;
+  height: 5vh;
+}
+main .main-inner .about-inner-cover-arrow {
+  display: block;
+  width: auto;
+  height: 30vh;
+  position: absolute;
+  top: 42vh;
+  bottom: 25vh;
+  left: 62vw;
+  right: 30vw;
+}
+main .main-inner .learn {
+  width: 100vw;
+  height: 400vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  scroll-snap-align: start;
+}
+main .main-inner .learn-bg {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+main .main-inner .learn-bg-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
+  filter: blur(3px);
+}
+main .main-inner .learn-bg-cover {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.5;
+}
+main .main-inner .learn-inner {
+  display: block;
+  position: absolute;
+  width: 80vw;
+  height: 300vh;
+  top: 60vh;
+}
+main .main-inner .learn-inner-text {
+  display: block;
+  position: sticky;
+  top: 25vh;
+  left: 5vh;
+  z-index: 30;
+}
+main .main-inner .learn-inner-text h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+main .main-inner .learn-inner-text p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-bottom: 2vh;
+}
+main .main-inner .learn-inner2 {
+  position: absolute;
+  top: 100vh;
+  width: 50vw;
+  height: 300vh;
+  background-color: #00AFD7;
+  right: 0;
+}
+main .main-inner .classroom {
+  width: 100vw;
+  height: 70vh;
+  background-color: #FFD400;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 30;
+  position: relative;
+  scroll-snap-align: start;
+}
+main .main-inner .classroom-inner {
+  display: block;
+  position: absolute;
+  width: 96vw;
+  height: 70vh;
+  background-color: #00AFD7;
+  border-radius: 5vh 5vh 0 0;
+  top: 2vw;
+}
+main .main-inner .achievements {
+  width: 100vw;
+  height: 140vw;
+  background-color: #FFD400;
+  z-index: 30;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: end;
+}
+main .main-inner .achievements-inner {
+  display: block;
+  position: absolute;
+  width: 96vw;
+  height: 136vw;
+  background-color: #00AFD7;
+  border-radius: 5vh;
+}
+main .main-inner .achievements-inner-world {
+  position: relative;
+  margin-top: 20vh;
+}
+main .main-inner .achievements-inner-world h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+main .main-inner .achievements-inner-world p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-bottom: 2vh;
+}
+main .main-inner .achievements-inner-award {
+  position: relative;
+  margin-top: 20vh;
+}
+main .main-inner .achievements-inner-award h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+main .main-inner .achievements-inner-award p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-bottom: 2vh;
+}
+main .main-inner .purchase {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00AFD7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 30;
+  position: relative;
+  scroll-snap-align: end;
+}
+main .main-inner .contact {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00AFD7;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 30;
+  position: relative;
+  scroll-snap-align: end;
+}/*# sourceMappingURL=style.css.map */
