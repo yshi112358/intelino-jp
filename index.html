@@ -89,13 +89,6 @@
                         <p>さて、何つくる？</p>
                     </div>
                     <div class="about-inner-cover">
-                        <div class="about-inner-cover-detail">
-                            <div class="about-inner-cover-detail-background">
-                                <div class="about-inner-cover-detail-background-button">
-                                    詳しく<img src="./img/plus.svg" alt="plus">
-                                </div>
-                            </div>
-                        </div>
                         <img class="about-inner-cover-arrow" src="./img/arrow.svg" alt="arrow">
                     </div>
                 </div>
@@ -112,27 +105,77 @@
                         <p>レールとスナップを組み合わせて遊び方は無限大</p>
                     </div>
                 </div>
-                <div class="learn-inner2">
-
-                </div>
             </section>
             <section class="achievements">
                 <div class="achievements-inner">
-                    <div class="achievements-inner-world">
+                    <div class="achievements-inner-text classroom-text-anim">
                         <h1>世界34ヵ国で使われています</h1>
                         <p>世界中で高い評価を受けています</p>
                         <p>intelinoは、世界中の教育機関で採用されています</p>
                     </div>
-                    <div class="achievements-inner-award">
+                    <div class="achievements-inner-classroom">
+                        <div class="achievements-inner-classroom-col">
+                        </div>
+                        <div class="achievements-inner-classroom-frame">
+                            <div class="achievements-inner-classroom-frame-left"></div>
+                            <div class="achievements-inner-classroom-frame-right"></div>
+                        </div>
+                    </div>
+                    <div class="achievements-inner-text awards-text-anim">
                         <h1>受賞歴</h1>
                         <p>世界中で高い評価を受けています</p>
                         <p>intelinoは、世界中の教育機関で採用されています</p>
                     </div>
+                    <div class="achievements-inner-awards">
+                        <div class="achievements-inner-awards-row">
+                            <img src="./img/awards-logo/TIME-award.svg" alt="TIME-award">
+                            <img src="./img/awards-logo/STA-award.svg" alt="STA-award">
+                            <img src="./img/awards-logo/ZR-award.svg" alt="ZR-award">
+                            <img src="./img/awards-logo/FW-award.svg" alt="FW-award">
+                            <img src="./img/awards-logo/BETT-award.svg" alt="BETT-award">
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="purchase">
+                <div class="purchase-inner">
+                    <div class="purchase-inner-item">
+                        <div class="purchase-inner-item-img"></div>
+                        <div class="purchase-inner-item-text">
+                            <h1>スターターセット</h1>
+                            <p>intelinoの基本セット</p>
+                            <p>電車型ロボット本体、レール、スナップ、充電器、ステッカー</p>
+                            <p>価格：¥49,800（税込）</p>
+                            <p>intelinoを始めるには、スターターセットがおすすめ</p>
+                        </div>
+                    </div>
             </section>
             <section class="contact">
+                <div class="contact-inner">
+                    <div class="contact-inner-text">
+                        <h1>授業での導入をお考えですか？</h1>
+                        <p>教育関係者向けの情報はこちらから</p>
+                    </div>
+                    <div class="contact-inner-form">
+                        <form action="">
+                            <div class="contact-inner-form-row">
+                                <label for="name">お名前</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="contact-inner-form-row">
+                                <label for="email">メールアドレス</label>
+                                <input type="email" id="email" name="email">
+                            </div>
+                            <div class="contact-inner-form-row">
+                                <label for="message">お問い合わせ内容</label>
+                                <textarea id="message" name="message"></textarea>
+                            </div>
+                            <div class="contact-inner-form-row">
+                                <button type="submit">送信</button>
+                            </div>
+                        </form>
+                    </div>
+
             </section>
         </div>
     </main>
@@ -146,6 +189,7 @@
     <!-- Import JS -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="./component.js"></script>
     <script src="./animation.js"></script>
 
 </body>

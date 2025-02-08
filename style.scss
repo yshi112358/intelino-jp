@@ -100,6 +100,25 @@ header {
     }
 }
 
+h1 {
+    display: block;
+    white-space: nowrap;
+    color: $yellow;
+    font-size: 10vh;
+    font-weight: bold;
+    margin-bottom: 3vh;
+}
+
+p {
+    display: block;
+    white-space: nowrap;
+    color: $white;
+    font-size: 3vh;
+    font-weight: regular;
+    margin-left: 1vw;
+    margin-bottom: 2vh;
+}
+
 main {
     position: absolute;
 
@@ -192,24 +211,7 @@ main {
                     top: 5vh+$header-height;
                     z-index: 30;
 
-                    h1 {
-                        display: block;
-                        white-space: nowrap;
-                        color: $yellow;
-                        font-size: 10vh;
-                        font-weight: bold;
-                        margin-bottom: 3vh;
-                    }
 
-                    p {
-                        display: block;
-                        white-space: nowrap;
-                        color: $white;
-                        font-size: 3vh;
-                        font-weight: regular;
-                        margin-left: 1vw;
-                        margin-bottom: 2vh;
-                    }
                 }
 
                 &-img {
@@ -284,7 +286,7 @@ main {
 
         .learn {
             width: 100vw;
-            height: 400vh;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -330,13 +332,13 @@ main {
                 display: block;
                 position: absolute;
                 width: 80vw;
-                height: 300vh;
-                top: 40vh+$header-height;
+                height: 100vh;
+                top: $header-height;
 
                 &-text {
                     display: block;
-                    position: sticky;
-                    top: 5vh+$header-height;
+                    position: relative;
+                    top: 40vh;
                     left: 5vh;
                     z-index: 30;
 
@@ -396,67 +398,145 @@ main {
             }
         }
 
+        $achievement_margin: 2vw;
+        $achievement_width: 100vw;
+        $achievement_height: 100vw;
+        $achievement_inner_width: $achievement_width - $achievement_margin * 2;
+        $achievement_inner_height: $achievement_height - $achievement_margin * 2;
+
         .achievements {
-            width: 100vw;
-            height: 140vw;
+            width: $achievement_width;
+            height: auto;
             background-color: $yellow;
             z-index: 30;
             position: relative;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start;
+            align-items: flex-start;
             scroll-snap-align: end;
+            overflow: hidden;
 
             &-inner {
-                display: block;
-                position: absolute;
-                width: 96vw;
-                height: 136vw;
+                display: flex;
+                position: relative;
+                width: $achievement_inner_width;
+                height: auto;
                 background-color: $blue;
                 border-radius: 5vh;
+                flex-flow: column;
+                align-items: center;
+                justify-content: flex-start;
+                margin: 2vw;
 
-                &-world {
+                &-text {
                     position: relative;
-                    margin-top: $header-height;
+                    margin-top: $header-height - 6vh;
+                    margin-bottom: 3vh;
+                    width: 80vw;
+                }
 
-                    h1 {
-                        display: block;
-                        white-space: nowrap;
-                        color: $yellow;
-                        font-size: 10vh;
-                        font-weight: bold;
-                        margin-bottom: 3vh;
+
+                &-classroom {
+                    $classroom_height: 60vh;
+                    height: $classroom_height;
+                    width: 100vw;
+                    display: flex;
+                    justify-content: center;
+                    position: relative; //これ重要
+
+                    &-col {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100vw;
+                        height: $classroom_height;
+                        flex-flow: column;
+
+                        &-container {
+                            display: flex;
+                            width: 100vw;
+                            height: $classroom_height/2;
+                            flex-flow: row;
+                            flex-wrap: nowrap;
+
+                            &-row {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: auto;
+                                height: $classroom_height/2;
+                                flex-flow: row;
+
+                                &-img {
+                                    position: relative;
+                                    width: auto;
+                                    height: $classroom_height/2 - 2vh;
+                                    background-color: $red;
+                                    position: relative;
+                                    z-index: 40;
+                                    border-radius: 2vh;
+                                    margin: 1vh;
+                                }
+                            }
+                        }
+
+                        .right {
+                            justify-content: flex-end;
+                        }
+
+                        .left {
+                            justify-content: flex-start;
+                        }
                     }
 
-                    p {
-                        display: block;
-                        white-space: nowrap;
-                        color: $white;
-                        font-size: 3vh;
-                        font-weight: regular;
-                        margin-bottom: 2vh;
+                    &-frame {
+                        width: 100vw;
+                        height: $classroom_height;
+                        position: absolute;
+                        z-index: 50;
+                        top: 0;
+
+                        %frame_shape {
+                            width: $achievement_margin;
+                            height: $classroom_height;
+                            background-color: $yellow;
+                            position: absolute;
+                            top: 0;
+                        }
+
+                        &-left {
+                            @extend %frame_shape;
+                            left: 0;
+                        }
+
+                        &-right {
+                            @extend %frame_shape;
+                            right: 0;
+                        }
                     }
                 }
-                &-award{
+
+                &-awards {
+                    width: 80vw;
+                    height: 20vh;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
                     position: relative;
-                    margin-top: $header-height;
+                    flex-flow: row;
+                    margin-bottom: 10vh;
 
-                    h1 {
-                        display: block;
-                        white-space: nowrap;
-                        color: $yellow;
-                        font-size: 10vh;
-                        font-weight: bold;
-                        margin-bottom: 3vh;
-                    }
+                    &-row {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        width: 100vw;
 
-                    p {
-                        display: block;
-                        white-space: nowrap;
-                        color: $white;
-                        font-size: 3vh;
-                        font-weight: regular;
-                        margin-bottom: 2vh;
+                        img {
+                            width: 20vh;
+                            height: 20vh;
+                            margin: 2vh;
+                        }
                     }
                 }
             }
@@ -470,7 +550,7 @@ main {
             justify-content: center;
             align-items: flex-start;
             z-index: 30;
-            position: relative;
+            position: sticky;
             scroll-snap-align: end;
         }
 

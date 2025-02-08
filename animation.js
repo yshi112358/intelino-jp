@@ -102,3 +102,86 @@ const tl_learn_end = gsap.timeline({
 tl_learn_end.to(".main-inner", {
     "scroll-snap-type": "none",
 });
+
+
+const tl_classroom_start = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.achievements',
+        start: 'top center-=10%',
+        end: 'center center',
+        // markers: true,
+        toggleActions: 'play none none reverse',
+    }
+});
+tl_classroom_start.fromTo('.classroom-text-anim',
+    {
+        autoAlpha: 0,
+        y: 100,
+    },
+    {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "achievements-inner").fromTo('.achievements-inner-classroom', {
+        autoAlpha: 0,
+        y: 100,
+    }, {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "achievements-inner");
+
+const tl_awards_start = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.awards-text-anim',
+        start: 'top-=200% center',
+        end: 'center center',
+        // markers: true,
+        toggleActions: 'play none none reverse',
+    }
+});
+tl_awards_start.fromTo('.awards-text-anim',
+    {
+        autoAlpha: 0,
+        y: 100,
+    },
+    {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "awards-inner").fromTo('.achievements-inner-awards-row', {
+        autoAlpha: 0,
+        y: 100,
+    }, {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "awards-inner").to(".main-inner", {
+        "scroll-snap-type": "y mandatory",
+    });
+const tl_achievement_end = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.achievements',
+        start: 'bottom-=10% center',
+        end: 'bottom top',
+        // markers: true,
+        scrub: 0.7,
+    }
+});
+tl_achievement_end.to('.achievements-inner', {
+    opacity: 0,
+    y: -100,
+});
+
+classroom_col_container.forEach((e, i) => {
+    window.setTimeout(() => {
+        let classroom_row_width = e.children[0].offsetWidth;
+        console.log(classroom_row_width);
+        gsap.to(e, {
+            x: classroom_row_width * (-1) ** i,
+            duration: 30,
+            ease: "none",
+            repeat: -1,
+        })
+    }, 1000);
+});

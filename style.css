@@ -78,6 +78,25 @@ header .header-inner .global-nav ul li .vertical-line img {
   height: 5vh;
 }
 
+h1 {
+  display: block;
+  white-space: nowrap;
+  color: #FFD400;
+  font-size: 10vh;
+  font-weight: bold;
+  margin-bottom: 3vh;
+}
+
+p {
+  display: block;
+  white-space: nowrap;
+  color: #FFFFFF;
+  font-size: 3vh;
+  font-weight: regular;
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+}
+
 main {
   position: absolute;
 }
@@ -159,23 +178,6 @@ main .main-inner .about-inner-text {
   top: 25vh;
   z-index: 30;
 }
-main .main-inner .about-inner-text h1 {
-  display: block;
-  white-space: nowrap;
-  color: #FFD400;
-  font-size: 10vh;
-  font-weight: bold;
-  margin-bottom: 3vh;
-}
-main .main-inner .about-inner-text p {
-  display: block;
-  white-space: nowrap;
-  color: #FFFFFF;
-  font-size: 3vh;
-  font-weight: regular;
-  margin-left: 1vw;
-  margin-bottom: 2vh;
-}
 main .main-inner .about-inner-img {
   width: 100vw;
   height: 100vh;
@@ -239,7 +241,7 @@ main .main-inner .about-inner-cover-arrow {
 }
 main .main-inner .learn {
   width: 100vw;
-  height: 400vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -282,13 +284,13 @@ main .main-inner .learn-inner {
   display: block;
   position: absolute;
   width: 80vw;
-  height: 300vh;
-  top: 60vh;
+  height: 100vh;
+  top: 20vh;
 }
 main .main-inner .learn-inner-text {
   display: block;
-  position: sticky;
-  top: 25vh;
+  position: relative;
+  top: 40vh;
   left: 5vh;
   z-index: 30;
 }
@@ -338,62 +340,120 @@ main .main-inner .classroom-inner {
 }
 main .main-inner .achievements {
   width: 100vw;
-  height: 140vw;
+  height: auto;
   background-color: #FFD400;
   z-index: 30;
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   scroll-snap-align: end;
+  overflow: hidden;
 }
 main .main-inner .achievements-inner {
-  display: block;
-  position: absolute;
+  display: flex;
+  position: relative;
   width: 96vw;
-  height: 136vw;
+  height: auto;
   background-color: #00AFD7;
   border-radius: 5vh;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 2vw;
 }
-main .main-inner .achievements-inner-world {
+main .main-inner .achievements-inner-text {
   position: relative;
-  margin-top: 20vh;
-}
-main .main-inner .achievements-inner-world h1 {
-  display: block;
-  white-space: nowrap;
-  color: #FFD400;
-  font-size: 10vh;
-  font-weight: bold;
+  margin-top: 14vh;
   margin-bottom: 3vh;
+  width: 80vw;
 }
-main .main-inner .achievements-inner-world p {
-  display: block;
-  white-space: nowrap;
-  color: #FFFFFF;
-  font-size: 3vh;
-  font-weight: regular;
-  margin-bottom: 2vh;
-}
-main .main-inner .achievements-inner-award {
+main .main-inner .achievements-inner-classroom {
+  height: 60vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
   position: relative;
-  margin-top: 20vh;
 }
-main .main-inner .achievements-inner-award h1 {
-  display: block;
-  white-space: nowrap;
-  color: #FFD400;
-  font-size: 10vh;
-  font-weight: bold;
-  margin-bottom: 3vh;
+main .main-inner .achievements-inner-classroom-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 60vh;
+  flex-flow: column;
 }
-main .main-inner .achievements-inner-award p {
-  display: block;
-  white-space: nowrap;
-  color: #FFFFFF;
-  font-size: 3vh;
-  font-weight: regular;
-  margin-bottom: 2vh;
+main .main-inner .achievements-inner-classroom-col-container {
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  flex-flow: row;
+  flex-wrap: nowrap;
+}
+main .main-inner .achievements-inner-classroom-col-container-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 30vh;
+  flex-flow: row;
+}
+main .main-inner .achievements-inner-classroom-col-container-row-img {
+  position: relative;
+  width: auto;
+  height: 28vh;
+  background-color: #F9423A;
+  position: relative;
+  z-index: 40;
+  border-radius: 2vh;
+  margin: 1vh;
+}
+main .main-inner .achievements-inner-classroom-col .right {
+  justify-content: flex-end;
+}
+main .main-inner .achievements-inner-classroom-col .left {
+  justify-content: flex-start;
+}
+main .main-inner .achievements-inner-classroom-frame {
+  width: 100vw;
+  height: 60vh;
+  position: absolute;
+  z-index: 50;
+  top: 0;
+}
+main .main-inner .achievements-inner-classroom-frame .achievements-inner-classroom-frame-right, main .main-inner .achievements-inner-classroom-frame .achievements-inner-classroom-frame-left {
+  width: 2vw;
+  height: 60vh;
+  background-color: #FFD400;
+  position: absolute;
+  top: 0;
+}
+main .main-inner .achievements-inner-classroom-frame-left {
+  left: 0;
+}
+main .main-inner .achievements-inner-classroom-frame-right {
+  right: 0;
+}
+main .main-inner .achievements-inner-awards {
+  width: 80vw;
+  height: 20vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  flex-flow: row;
+  margin-bottom: 10vh;
+}
+main .main-inner .achievements-inner-awards-row {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100vw;
+}
+main .main-inner .achievements-inner-awards-row img {
+  width: 20vh;
+  height: 20vh;
+  margin: 2vh;
 }
 main .main-inner .purchase {
   width: 100vw;
@@ -403,7 +463,7 @@ main .main-inner .purchase {
   justify-content: center;
   align-items: flex-start;
   z-index: 30;
-  position: relative;
+  position: sticky;
   scroll-snap-align: end;
 }
 main .main-inner .contact {
