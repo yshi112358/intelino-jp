@@ -101,7 +101,6 @@ main {
   position: absolute;
 }
 main .main-inner {
-  scroll-snap-type: y mandatory;
   position: absolute;
   overflow-y: scroll;
   scrollbar-width: none;
@@ -163,20 +162,24 @@ main .main-inner .top-inner-cover {
 main .main-inner .about {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   scroll-snap-align: end;
   background-color: #00AFD7;
 }
 main .main-inner .about-inner {
   position: inherit;
+  width: 100vw;
+  height: 100vh;
+}
+main .main-inner .about-inner-text {
+  position: sticky;
+  top: 25vh;
+  z-index: 30;
+  width: 100vw;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-main .main-inner .about-inner-text {
-  position: absolute;
-  top: 25vh;
-  z-index: 30;
 }
 main .main-inner .about-inner-img {
   width: 100vw;
@@ -241,7 +244,7 @@ main .main-inner .about-inner-cover-arrow {
 }
 main .main-inner .learn {
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -282,7 +285,7 @@ main .main-inner .learn-bg-cover {
 }
 main .main-inner .learn-inner {
   display: block;
-  position: absolute;
+  position: sticky;
   width: 80vw;
   height: 100vh;
   top: 20vh;
@@ -318,79 +321,70 @@ main .main-inner .learn-inner2 {
   background-color: #00AFD7;
   right: 0;
 }
-main .main-inner .classroom {
-  width: 100vw;
-  height: 70vh;
-  background-color: #FFD400;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  z-index: 30;
-  position: relative;
-  scroll-snap-align: start;
-}
-main .main-inner .classroom-inner {
-  display: block;
-  position: absolute;
-  width: 96vw;
-  height: 70vh;
-  background-color: #00AFD7;
-  border-radius: 5vh 5vh 0 0;
-  top: 2vw;
-}
 main .main-inner .achievements {
   width: 100vw;
-  height: auto;
+  height: 400vh;
   background-color: #FFD400;
   z-index: 30;
   position: relative;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-flow: column;
   scroll-snap-align: end;
-  overflow: hidden;
 }
 main .main-inner .achievements-inner {
-  display: flex;
-  position: relative;
-  width: 96vw;
+  position: sticky;
+  top: 0;
   height: auto;
+}
+main .main-inner .achievements .classroom {
+  height: 200vh;
+  width: 100vw;
+  position: relative;
+}
+main .main-inner .achievements .classroom-inner {
+  position: sticky;
+  top: 2vw;
+  margin: 2vw 2vw 0 2vw;
+  border-radius: 5vh 5vh 0 0;
+  width: 96vw;
   background-color: #00AFD7;
-  border-radius: 5vh;
+  height: auto;
+  display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 2vw;
 }
-main .main-inner .achievements-inner-text {
+main .main-inner .achievements .classroom-inner-text {
   position: relative;
   margin-top: 14vh;
   margin-bottom: 3vh;
-  width: 80vw;
 }
-main .main-inner .achievements-inner-classroom {
+main .main-inner .achievements .classroom-inner-classroom {
   height: 60vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   position: relative;
 }
-main .main-inner .achievements-inner-classroom-col {
+main .main-inner .achievements .classroom-inner-classroom-col {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 60vh;
   flex-flow: column;
+  overflow: hidden;
 }
-main .main-inner .achievements-inner-classroom-col-container {
+main .main-inner .achievements .classroom-inner-classroom-col-container {
   display: flex;
   width: 100vw;
   height: 30vh;
   flex-flow: row;
   flex-wrap: nowrap;
 }
-main .main-inner .achievements-inner-classroom-col-container-row {
+main .main-inner .achievements .classroom-inner-classroom-col-container-row {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -398,7 +392,7 @@ main .main-inner .achievements-inner-classroom-col-container-row {
   height: 30vh;
   flex-flow: row;
 }
-main .main-inner .achievements-inner-classroom-col-container-row-img {
+main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
   position: relative;
   width: auto;
   height: 28vh;
@@ -408,33 +402,56 @@ main .main-inner .achievements-inner-classroom-col-container-row-img {
   border-radius: 2vh;
   margin: 1vh;
 }
-main .main-inner .achievements-inner-classroom-col .right {
+main .main-inner .achievements .classroom-inner-classroom-col .right {
   justify-content: flex-end;
 }
-main .main-inner .achievements-inner-classroom-col .left {
+main .main-inner .achievements .classroom-inner-classroom-col .left {
   justify-content: flex-start;
 }
-main .main-inner .achievements-inner-classroom-frame {
+main .main-inner .achievements .classroom-inner-classroom-frame {
   width: 100vw;
   height: 60vh;
   position: absolute;
   z-index: 50;
   top: 0;
 }
-main .main-inner .achievements-inner-classroom-frame .achievements-inner-classroom-frame-right, main .main-inner .achievements-inner-classroom-frame .achievements-inner-classroom-frame-left {
+main .main-inner .achievements .classroom-inner-classroom-frame .classroom-inner-classroom-frame-right, main .main-inner .achievements .classroom-inner-classroom-frame .classroom-inner-classroom-frame-left {
   width: 2vw;
   height: 60vh;
   background-color: #FFD400;
   position: absolute;
   top: 0;
 }
-main .main-inner .achievements-inner-classroom-frame-left {
+main .main-inner .achievements .classroom-inner-classroom-frame-left {
   left: 0;
 }
-main .main-inner .achievements-inner-classroom-frame-right {
+main .main-inner .achievements .classroom-inner-classroom-frame-right {
   right: 0;
 }
-main .main-inner .achievements-inner-awards {
+main .main-inner .achievements .awards {
+  height: auto;
+  width: 100vw;
+  position: relative;
+}
+main .main-inner .achievements .awards-inner {
+  top: 2vw;
+  margin: 0 2vw 2vw 2vw;
+  border-radius: 0 0 5vh 5vh;
+  width: 96vw;
+  background-color: #00AFD7;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+main .main-inner .achievements .awards-inner-text {
+  position: relative;
+  margin-top: 14vh;
+  margin-bottom: 3vh;
+  width: 80vw;
+}
+main .main-inner .achievements .awards-inner-awards {
   width: 80vw;
   height: 20vh;
   display: flex;
@@ -444,13 +461,13 @@ main .main-inner .achievements-inner-awards {
   flex-flow: row;
   margin-bottom: 10vh;
 }
-main .main-inner .achievements-inner-awards-row {
+main .main-inner .achievements .awards-inner-awards-row {
   display: flex;
   justify-content: start;
   align-items: center;
   width: 100vw;
 }
-main .main-inner .achievements-inner-awards-row img {
+main .main-inner .achievements .awards-inner-awards-row img {
   width: 20vh;
   height: 20vh;
   margin: 2vh;

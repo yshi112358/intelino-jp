@@ -38,8 +38,8 @@ tl_top.to('.top-inner', {
 const tl_about_start = gsap.timeline({
     scrollTrigger: {
         trigger: '.about',
-        start: 'top center-=10%',
-        end: 'center center',
+        start: 'top center',
+        end: 'center bottom',
         // markers: true,
         scrub: 0.7,
     }
@@ -106,14 +106,14 @@ tl_learn_end.to(".main-inner", {
 
 const tl_classroom_start = gsap.timeline({
     scrollTrigger: {
-        trigger: '.achievements',
-        start: 'top center-=10%',
+        trigger: '.classroom',
+        start: 'top center',
         end: 'center center',
         // markers: true,
         toggleActions: 'play none none reverse',
     }
 });
-tl_classroom_start.fromTo('.classroom-text-anim',
+tl_classroom_start.fromTo('.classroom-inner-text',
     {
         autoAlpha: 0,
         y: 100,
@@ -122,7 +122,7 @@ tl_classroom_start.fromTo('.classroom-text-anim',
         duration: 0.5,
         autoAlpha: 1,
         y: 0,
-    }, "achievements-inner").fromTo('.achievements-inner-classroom', {
+    }, "achievements-inner").fromTo('.classroom-inner-classroom', {
         autoAlpha: 0,
         y: 100,
     }, {
@@ -133,14 +133,14 @@ tl_classroom_start.fromTo('.classroom-text-anim',
 
 const tl_awards_start = gsap.timeline({
     scrollTrigger: {
-        trigger: '.awards-text-anim',
-        start: 'top-=200% center',
+        trigger: '.awards',
+        start: 'top center',
         end: 'center center',
-        // markers: true,
+        markers: true,
         toggleActions: 'play none none reverse',
     }
 });
-tl_awards_start.fromTo('.awards-text-anim',
+tl_awards_start.fromTo('.awards-inner-text',
     {
         autoAlpha: 0,
         y: 100,
@@ -149,7 +149,7 @@ tl_awards_start.fromTo('.awards-text-anim',
         duration: 0.5,
         autoAlpha: 1,
         y: 0,
-    }, "awards-inner").fromTo('.achievements-inner-awards-row', {
+    }, "awards-inner").fromTo('.awards-inner-awards-row', {
         autoAlpha: 0,
         y: 100,
     }, {
@@ -157,7 +157,7 @@ tl_awards_start.fromTo('.awards-text-anim',
         autoAlpha: 1,
         y: 0,
     }, "awards-inner").to(".main-inner", {
-        "scroll-snap-type": "y mandatory",
+        // "scroll-snap-type": "y mandatory",
     });
 const tl_achievement_end = gsap.timeline({
     scrollTrigger: {
@@ -168,10 +168,10 @@ const tl_achievement_end = gsap.timeline({
         scrub: 0.7,
     }
 });
-tl_achievement_end.to('.achievements-inner', {
-    opacity: 0,
-    y: -100,
-});
+// tl_achievement_end.to('.achievements-inner', {
+//     opacity: 0,
+//     y: -100,
+// });
 
 classroom_col_container.forEach((e, i) => {
     window.setTimeout(() => {
@@ -185,3 +185,12 @@ classroom_col_container.forEach((e, i) => {
         })
     }, 1000);
 });
+
+window.setTimeout(() => {
+    let element = document.querySelector('.achievements-inner');
+    let style = window.getComputedStyle(element);
+    let value = Number(style.getPropertyValue('height').replace('px',''))-window.innerHeight;
+    // console.log(window.innerHeight)
+    // console.log(value);
+    document.querySelector('.achievements-inner').style.top = String(-value)+"px";
+}, 1000);

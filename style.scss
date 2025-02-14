@@ -123,7 +123,7 @@ main {
     position: absolute;
 
     .main-inner {
-        scroll-snap-type: y mandatory;
+        // scroll-snap-type: y mandatory;
         position: absolute;
         overflow-y: scroll;
         scrollbar-width: none;
@@ -196,22 +196,27 @@ main {
         .about {
             position: relative;
             width: 100vw;
-            height: 100vh;
+            height: 200vh;
             scroll-snap-align: end;
             background-color: $blue;
 
             &-inner {
                 position: inherit;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                // display: flex;
+                // align-items: center;
+                // justify-content: center;
+                width: 100vw;
+                height: 100vh;
 
                 &-text {
-                    position: absolute;
+                    position: sticky;
                     top: 5vh+$header-height;
                     z-index: 30;
-
-
+                    width: 100vw;
+                    left: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                 }
 
                 &-img {
@@ -286,7 +291,7 @@ main {
 
         .learn {
             width: 100vw;
-            height: 100vh;
+            height: 200vh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -330,7 +335,7 @@ main {
 
             &-inner {
                 display: block;
-                position: absolute;
+                position: sticky;
                 width: 80vw;
                 height: 100vh;
                 top: $header-height;
@@ -376,166 +381,188 @@ main {
         $award_inner_posion: (
             100vw - $award_width)/2;
 
-        .classroom {
-            width: 100vw;
-            height: 70vh;
-            background-color: $yellow;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            z-index: 30;
-            position: relative;
-            scroll-snap-align: start;
-
-            &-inner {
-                display: block;
-                position: absolute;
-                width: $award_width;
-                height: 70vh;
-                background-color: $blue;
-                border-radius: 5vh 5vh 0 0;
-                top: $award_inner_posion;
-            }
-        }
-
         $achievement_margin: 2vw;
         $achievement_width: 100vw;
-        $achievement_height: 100vw;
+        $achievement_height: 200vw;
         $achievement_inner_width: $achievement_width - $achievement_margin * 2;
         $achievement_inner_height: $achievement_height - $achievement_margin * 2;
 
         .achievements {
             width: $achievement_width;
-            height: auto;
+            height: 400vh;
             background-color: $yellow;
             z-index: 30;
             position: relative;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
+            flex-flow: column;
             scroll-snap-align: end;
-            overflow: hidden;
 
-            &-inner {
-                display: flex;
-                position: relative;
-                width: $achievement_inner_width;
+            &-inner{
+                position: sticky;
+                top: 0;
                 height: auto;
-                background-color: $blue;
-                border-radius: 5vh;
-                flex-flow: column;
-                align-items: center;
-                justify-content: flex-start;
-                margin: 2vw;
+            }
 
-                &-text {
-                    position: relative;
-                    margin-top: $header-height - 6vh;
-                    margin-bottom: 3vh;
-                    width: 80vw;
-                }
+            .classroom {
+                //ここのheightを変えることでスクロール量を調整
+                height: 200vh;
+                width: 100vw;
+                position: relative;
 
+                &-inner {
+                    position: sticky;
+                    top: 2vw;
+                    margin: 2vw 2vw 0 2vw;
+                    border-radius: 5vh 5vh 0 0;
+                    width: $achievement_inner_width;
+                    background-color: $blue;
+                    height: auto;
 
-                &-classroom {
-                    $classroom_height: 60vh;
-                    height: $classroom_height;
-                    width: 100vw;
+                    // flex設定
                     display: flex;
-                    justify-content: center;
-                    position: relative; //これ重要
+                    flex-flow: column;
+                    align-items: center;
+                    justify-content: flex-start;
 
-                    &-col {
+                    &-text {
+                        position: relative;
+                        margin-top: $header-height - 6vh;
+                        margin-bottom: 3vh;
+                    }
+
+                    &-classroom {
+                        $classroom_height: 60vh;
+                        height: $classroom_height;
+                        width: 100vw;
                         display: flex;
                         justify-content: center;
-                        align-items: center;
-                        width: 100vw;
-                        height: $classroom_height;
-                        flex-flow: column;
+                        position: relative; //これ重要
 
-                        &-container {
+                        &-col {
                             display: flex;
+                            justify-content: center;
+                            align-items: center;
                             width: 100vw;
-                            height: $classroom_height/2;
-                            flex-flow: row;
-                            flex-wrap: nowrap;
+                            height: $classroom_height;
+                            flex-flow: column;
+                            overflow: hidden;
 
-                            &-row {
+                            &-container {
                                 display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                width: auto;
+                                width: 100vw;
                                 height: $classroom_height/2;
                                 flex-flow: row;
+                                flex-wrap: nowrap;
 
-                                &-img {
-                                    position: relative;
+                                &-row {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     width: auto;
-                                    height: $classroom_height/2 - 2vh;
-                                    background-color: $red;
-                                    position: relative;
-                                    z-index: 40;
-                                    border-radius: 2vh;
-                                    margin: 1vh;
+                                    height: $classroom_height/2;
+                                    flex-flow: row;
+
+                                    &-img {
+                                        position: relative;
+                                        width: auto;
+                                        height: $classroom_height/2 - 2vh;
+                                        background-color: $red;
+                                        position: relative;
+                                        z-index: 40;
+                                        border-radius: 2vh;
+                                        margin: 1vh;
+                                    }
                                 }
+                            }
+
+                            .right {
+                                justify-content: flex-end;
+                            }
+
+                            .left {
+                                justify-content: flex-start;
                             }
                         }
 
-                        .right {
-                            justify-content: flex-end;
-                        }
-
-                        .left {
-                            justify-content: flex-start;
-                        }
-                    }
-
-                    &-frame {
-                        width: 100vw;
-                        height: $classroom_height;
-                        position: absolute;
-                        z-index: 50;
-                        top: 0;
-
-                        %frame_shape {
-                            width: $achievement_margin;
+                        &-frame {
+                            width: 100vw;
                             height: $classroom_height;
-                            background-color: $yellow;
                             position: absolute;
+                            z-index: 50;
                             top: 0;
-                        }
 
-                        &-left {
-                            @extend %frame_shape;
-                            left: 0;
-                        }
+                            %frame_shape {
+                                width: $achievement_margin;
+                                height: $classroom_height;
+                                background-color: $yellow;
+                                position: absolute;
+                                top: 0;
+                            }
 
-                        &-right {
-                            @extend %frame_shape;
-                            right: 0;
+                            &-left {
+                                @extend %frame_shape;
+                                left: 0;
+                            }
+
+                            &-right {
+                                @extend %frame_shape;
+                                right: 0;
+                            }
                         }
                     }
                 }
+            }
 
-                &-awards {
-                    width: 80vw;
-                    height: 20vh;
+            .awards {
+                height: auto;
+                width: 100vw;
+                position: relative;
+
+                &-inner {
+                    top: 2vw;
+                    margin: 0 2vw 2vw 2vw;
+                    border-radius: 0 0 5vh 5vh;
+                    width: $achievement_inner_width;
+                    background-color: $blue;
+                    height: auto;
+                    
+                    // flex設定
                     display: flex;
-                    justify-content: start;
+                    flex-flow: column;
                     align-items: center;
-                    position: relative;
-                    flex-flow: row;
-                    margin-bottom: 10vh;
+                    justify-content: flex-start;
 
-                    &-row {
+                    &-text {
+                        position: relative;
+                        margin-top: $header-height - 6vh;
+                        margin-bottom: 3vh;
+                        width: 80vw;
+                    }
+
+
+                    &-awards {
+                        width: 80vw;
+                        height: 20vh;
                         display: flex;
                         justify-content: start;
                         align-items: center;
-                        width: 100vw;
+                        position: relative;
+                        flex-flow: row;
+                        margin-bottom: 10vh;
 
-                        img {
-                            width: 20vh;
-                            height: 20vh;
-                            margin: 2vh;
+                        &-row {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            width: 100vw;
+
+                            img {
+                                width: 20vh;
+                                height: 20vh;
+                                margin: 2vh;
+                            }
                         }
                     }
                 }
