@@ -136,7 +136,7 @@ const tl_awards_start = gsap.timeline({
         trigger: '.awards',
         start: 'top center',
         end: 'center center',
-        markers: true,
+        // markers: true,
         toggleActions: 'play none none reverse',
     }
 });
@@ -168,10 +168,10 @@ const tl_achievement_end = gsap.timeline({
         scrub: 0.7,
     }
 });
-// tl_achievement_end.to('.achievements-inner', {
-//     opacity: 0,
-//     y: -100,
-// });
+tl_achievement_end.to('.achievements-inner', {
+    opacity: 0,
+    y: -100,
+});
 
 classroom_col_container.forEach((e, i) => {
     window.setTimeout(() => {

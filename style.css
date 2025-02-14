@@ -162,14 +162,14 @@ main .main-inner .top-inner-cover {
 main .main-inner .about {
   position: relative;
   width: 100vw;
-  height: 200vh;
+  height: 300vh;
   scroll-snap-align: end;
   background-color: #00AFD7;
 }
 main .main-inner .about-inner {
   position: inherit;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
 }
 main .main-inner .about-inner-text {
   position: sticky;
