@@ -1,6 +1,7 @@
 "use strict";
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({ scroller: ".main-inner" });
+ScrollTrigger.config({ ignoreMobileResize: false });
 
 const tl_top = gsap.timeline({
     scrollTrigger: {
