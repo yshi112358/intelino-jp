@@ -4,7 +4,7 @@ $yellow: #FFD400;
 $black: #000000;
 $gray: #B2AEAE;
 $white: #FFFFFF;
-$header-height: 20vh;
+$header-height: 20dvh;
 
 body {
     margin: 0;
@@ -20,7 +20,7 @@ header {
     position: fixed;
     top: 0;
     height: $header-height;
-    width: 100vw;
+    width: 100dvw;
     z-index: 100;
 
     .header-inner {
@@ -28,31 +28,31 @@ header {
 
         background-color: $blue;
         color: $white;
-        border-radius: 2vh;
-        // width: 85vh;
-        // height: 15vh;
-        width: 90vw;
-        height: 10vh;
+        border-radius: 2dvh;
+        // width: 85dvh;
+        // height: 15dvh;
+        width: 90dvw;
+        height: 10dvh;
         display: flex;
         justify-content: space-between; //左右中央寄せ（要素が2つしかないためそれぞれが端に寄っている）
         align-items: center;
 
         .logo {
-            height: 10vh;
+            height: 10dvh;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin: 0 5vh;
+            margin: 0 5dvh;
 
             img {
                 display: block;
-                height: 5vh;
+                height: 5dvh;
                 width: auto;
             }
         }
 
         .global-nav {
-            margin: 0 5vh;
+            margin: 0 5dvh;
 
             ul {
                 display: flex;
@@ -62,7 +62,7 @@ header {
                 margin: 0;
 
                 li {
-                    margin: 0 1vh;
+                    margin: 0 1dvh;
 
                     a {
                         font-weight: bold;
@@ -71,8 +71,8 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        font-size: 3vh;
-                        max-height: 10vh;
+                        font-size: 3dvh;
+                        max-height: 10dvh;
                         white-space: nowrap;
 
                         img {
@@ -86,11 +86,11 @@ header {
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        width: 1vh;
-                        font-size: 2vh;
+                        width: 1dvh;
+                        font-size: 2dvh;
 
                         img {
-                            height: 5vh;
+                            height: 5dvh;
                         }
                     }
                 }
@@ -104,19 +104,19 @@ h1 {
     display: block;
     white-space: nowrap;
     color: $yellow;
-    font-size: 10vh;
+    font-size: 10dvh;
     font-weight: bold;
-    margin-bottom: 3vh;
+    margin-bottom: 3dvh;
 }
 
 p {
     display: block;
     white-space: nowrap;
     color: $white;
-    font-size: 3vh;
+    font-size: 3dvh;
     font-weight: regular;
-    margin-left: 1vw;
-    margin-bottom: 2vh;
+    margin-left: 1dvw;
+    margin-bottom: 2dvh;
 }
 
 main {
@@ -127,13 +127,13 @@ main {
         position: absolute;
         overflow-y: scroll;
         scrollbar-width: none;
-        width: 100vw;
-        height: 100vh;
+        width: 100dvw;
+        height: 100dvh;
 
 
         .top {
-            width: 100vw;
-            height: 100vh;
+            width: 100dvw;
+            height: 100dvh;
             background-color: $blue;
             display: flex;
             justify-content: center;
@@ -145,37 +145,37 @@ main {
                 background-image: url('./img/intelino-video.webp');
                 background-size: cover;
                 background-position: bottom;
-                width: 80vw;
-                height: 70vh;
-                border-radius: 5vh;
+                width: 80dvw;
+                height: 70dvh;
+                border-radius: 5dvh;
                 margin-top: $header-height;
                 position: fixed;
                 z-index: 10;
                 pointer-events: none;
-                box-shadow: inset 2vh 2vh 2vh rgba($color: #000000, $alpha: 0.5),
-                    inset -2vh -2vh 2vh rgba($color: #000000, $alpha: 0.5);
+                box-shadow: inset 2dvh 2dvh 2dvh rgba($color: #000000, $alpha: 0.5),
+                    inset -2dvh -2dvh 2dvh rgba($color: #000000, $alpha: 0.5);
 
                 &-text {
-                    margin: 5vh;
+                    margin: 5dvh;
 
                     h1 {
                         display: block;
                         white-space: nowrap;
                         color: $yellow;
-                        font-size: 10vh;
+                        font-size: 10dvh;
                         font-weight: bold;
-                        margin-bottom: 2vh;
+                        margin-bottom: 2dvh;
                     }
 
                     p {
                         display: block;
                         white-space: nowrap;
                         color: $white;
-                        font-size: 3vh;
+                        font-size: 3dvh;
                         font-weight: regular;
-                        margin-bottom: 1vh;
-                        text-shadow: 0.1vh 0.1vh 1vh rgba($color: #000000, $alpha: 0.5),
-                            -0.1vh -0.1vh 1vh rgba($color: #000000, $alpha: 0.5);
+                        margin-bottom: 1dvh;
+                        text-shadow: 0.1dvh 0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5),
+                            -0.1dvh -0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5);
                         // background-color: $blue;
                     }
                 }
@@ -195,8 +195,8 @@ main {
 
         .about {
             position: relative;
-            width: 100vw;
-            height: 300vh;
+            width: 100dvw;
+            height: 300dvh;
             scroll-snap-align: end;
             background-color: $blue;
 
@@ -205,14 +205,14 @@ main {
                 // display: flex;
                 // align-items: center;
                 // justify-content: center;
-                width: 100vw;
-                height: 200vh;
+                width: 100dvw;
+                height: 200dvh;
 
                 &-text {
                     position: sticky;
-                    top: 5vh+$header-height;
+                    top: 5dvh+$header-height;
                     z-index: 30;
-                    width: 100vw;
+                    width: 100dvw;
                     left: 0;
                     display: flex;
                     align-items: center;
@@ -220,8 +220,8 @@ main {
                 }
 
                 &-img {
-                    width: 100vw;
-                    height: 100vh;
+                    width: 100dvw;
+                    height: 100dvh;
                     background-image: url('./img/intelino-yellow.png');
                     background-size: cover;
                     background-position: bottom;
@@ -233,29 +233,29 @@ main {
 
                 &-cover {
                     display: block;
-                    width: 100vw;
-                    height: 100vh;
+                    width: 100dvw;
+                    height: 100dvh;
                     top: 0;
                     z-index: 10;
                     pointer-events: none;
 
                     &-detail {
                         display: block;
-                        width: 100vw;
-                        height: 10vh;
+                        width: 100dvw;
+                        height: 10dvh;
                         position: absolute;
-                        bottom: 10vh;
+                        bottom: 10dvh;
                         display: flex;
                         justify-content: center;
                         align-items: center;
 
                         &-background {
                             display: block;
-                            width: 80vh;
-                            height: 13vh;
+                            width: 80dvh;
+                            height: 13dvh;
                             background-color: $gray;
                             position: absolute;
-                            border-radius: 2vh;
+                            border-radius: 2dvh;
 
                             &-button {
                                 display: block;
@@ -263,13 +263,13 @@ main {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
-                                bottom: 2vh;
-                                right: 2vh;
-                                font-size: 4vh;
+                                bottom: 2dvh;
+                                right: 2dvh;
+                                font-size: 4dvh;
 
                                 img {
-                                    width: 5vh;
-                                    height: 5vh;
+                                    width: 5dvh;
+                                    height: 5dvh;
                                 }
                             }
                         }
@@ -278,20 +278,20 @@ main {
                     &-arrow {
                         display: block;
                         width: auto;
-                        height: 30vh;
+                        height: 30dvh;
                         position: absolute;
-                        top: 42vh;
-                        bottom: 25vh;
-                        left: 62vw;
-                        right: 30vw;
+                        top: 42dvh;
+                        bottom: 25dvh;
+                        left: 62dvw;
+                        right: 30dvw;
                     }
                 }
             }
         }
 
         .learn {
-            width: 100vw;
-            height: 200vh;
+            width: 100dvw;
+            height: 200dvh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -336,60 +336,60 @@ main {
             &-inner {
                 display: block;
                 position: sticky;
-                width: 80vw;
-                height: 100vh;
+                width: 80dvw;
+                height: 100dvh;
                 top: $header-height;
 
                 &-text {
                     display: block;
                     position: relative;
-                    top: 40vh;
-                    left: 5vh;
+                    top: 40dvh;
+                    left: 5dvh;
                     z-index: 30;
 
                     h1 {
                         display: block;
                         white-space: nowrap;
                         color: $yellow;
-                        font-size: 10vh;
+                        font-size: 10dvh;
                         font-weight: bold;
-                        margin-bottom: 3vh;
+                        margin-bottom: 3dvh;
                     }
 
                     p {
                         display: block;
                         white-space: nowrap;
                         color: $white;
-                        font-size: 3vh;
+                        font-size: 3dvh;
                         font-weight: regular;
-                        margin-bottom: 2vh;
+                        margin-bottom: 2dvh;
                     }
                 }
             }
 
             &-inner2 {
                 position: absolute;
-                top: 100vh;
-                width: 50vw;
-                height: 300vh;
+                top: 100dvh;
+                width: 50dvw;
+                height: 300dvh;
                 background-color: $blue;
                 right: 0;
             }
         }
 
-        $award_width: 96vw;
+        $award_width: 96dvw;
         $award_inner_posion: (
-            100vw - $award_width)/2;
+            100dvw - $award_width)/2;
 
-        $achievement_margin: 2vw;
-        $achievement_width: 100vw;
-        $achievement_height: 200vw;
+        $achievement_margin: 2dvw;
+        $achievement_width: 100dvw;
+        $achievement_height: 200dvw;
         $achievement_inner_width: $achievement_width - $achievement_margin * 2;
         $achievement_inner_height: $achievement_height - $achievement_margin * 2;
 
         .achievements {
             width: $achievement_width;
-            height: 400vh;
+            height: 400dvh;
             background-color: $yellow;
             z-index: 30;
             position: relative;
@@ -407,15 +407,15 @@ main {
 
             .classroom {
                 //ここのheightを変えることでスクロール量を調整
-                height: 200vh;
-                width: 100vw;
+                height: 200dvh;
+                width: 100dvw;
                 position: relative;
 
                 &-inner {
                     position: sticky;
-                    top: 2vw;
-                    margin: 2vw 2vw 0 2vw;
-                    border-radius: 5vh 5vh 0 0;
+                    top: 2dvw;
+                    margin: 2dvw 2dvw 0 2dvw;
+                    border-radius: 5dvh 5dvh 0 0;
                     width: $achievement_inner_width;
                     background-color: $blue;
                     height: auto;
@@ -428,14 +428,14 @@ main {
 
                     &-text {
                         position: relative;
-                        margin-top: $header-height - 6vh;
-                        margin-bottom: 3vh;
+                        margin-top: $header-height - 6dvh;
+                        margin-bottom: 3dvh;
                     }
 
                     &-classroom {
-                        $classroom_height: 60vh;
+                        $classroom_height: 60dvh;
                         height: $classroom_height;
-                        width: 100vw;
+                        width: 100dvw;
                         display: flex;
                         justify-content: center;
                         position: relative; //これ重要
@@ -444,14 +444,14 @@ main {
                             display: flex;
                             justify-content: center;
                             align-items: center;
-                            width: 100vw;
+                            width: 100dvw;
                             height: $classroom_height;
                             flex-flow: column;
                             overflow: hidden;
 
                             &-container {
                                 display: flex;
-                                width: 100vw;
+                                width: 100dvw;
                                 height: $classroom_height/2;
                                 flex-flow: row;
                                 flex-wrap: nowrap;
@@ -467,12 +467,12 @@ main {
                                     &-img {
                                         position: relative;
                                         width: auto;
-                                        height: $classroom_height/2 - 2vh;
+                                        height: $classroom_height/2 - 2dvh;
                                         background-color: $red;
                                         position: relative;
                                         z-index: 40;
-                                        border-radius: 2vh;
-                                        margin: 1vh;
+                                        border-radius: 2dvh;
+                                        margin: 1dvh;
                                     }
                                 }
                             }
@@ -487,7 +487,7 @@ main {
                         }
 
                         &-frame {
-                            width: 100vw;
+                            width: 100dvw;
                             height: $classroom_height;
                             position: absolute;
                             z-index: 50;
@@ -517,13 +517,13 @@ main {
 
             .awards {
                 height: auto;
-                width: 100vw;
+                width: 100dvw;
                 position: relative;
 
                 &-inner {
-                    top: 2vw;
-                    margin: 0 2vw 2vw 2vw;
-                    border-radius: 0 0 5vh 5vh;
+                    top: 2dvw;
+                    margin: 0 2dvw 2dvw 2dvw;
+                    border-radius: 0 0 5dvh 5dvh;
                     width: $achievement_inner_width;
                     background-color: $blue;
                     height: auto;
@@ -536,32 +536,32 @@ main {
 
                     &-text {
                         position: relative;
-                        margin-top: $header-height - 6vh;
-                        margin-bottom: 3vh;
-                        width: 80vw;
+                        margin-top: $header-height - 6dvh;
+                        margin-bottom: 3dvh;
+                        width: 80dvw;
                     }
 
 
                     &-awards {
-                        width: 80vw;
-                        height: 20vh;
+                        width: 80dvw;
+                        height: 20dvh;
                         display: flex;
                         justify-content: start;
                         align-items: center;
                         position: relative;
                         flex-flow: row;
-                        margin-bottom: 10vh;
+                        margin-bottom: 10dvh;
 
                         &-row {
                             display: flex;
                             justify-content: start;
                             align-items: center;
-                            width: 100vw;
+                            width: 100dvw;
 
                             img {
-                                width: 20vh;
-                                height: 20vh;
-                                margin: 2vh;
+                                width: 20dvh;
+                                height: 20dvh;
+                                margin: 2dvh;
                             }
                         }
                     }
@@ -570,7 +570,7 @@ main {
         }
 
         .purchase {
-            width: 100vw;
+            width: 100dvw;
             height: auto;
             background-color: $blue;
             position: relative;
@@ -580,30 +580,30 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
-                height: 180vh;
+                height: 180dvh;
                 position: relative;
-                padding-top: 20vh;
+                padding-top: 20dvh;
 
                 &-img {
                     position: sticky;
                     top: 0;
 
                     img {
-                        height: 100vh;
+                        height: 100dvh;
                         width: auto;
                     }
                 }
 
                 &-text {
-                    padding-top: 50vh;
-                    margin-left: -20vw;
+                    padding-top: 50dvh;
+                    margin-left: -20dvw;
                     z-index: 40;
                 }
             }
         }
 
         .contact {
-            width: 100vw;
+            width: 100dvw;
             height: auto;
             background-color: $blue;
 
@@ -614,11 +614,11 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: flex-start;
-                height: 180vh;
-                padding-top: 30vh;
+                height: 180dvh;
+                padding-top: 30dvh;
 
                 &-img {
-                    width: 40vw;
+                    width: 40dvw;
                     position: sticky;
                     top: 0;
                     display: flex;
@@ -626,18 +626,18 @@ main {
                     align-items: center;
 
                     img {
-                        height: 100vh;
-                        width: 130vh;
+                        height: 100dvh;
+                        width: 130dvh;
                         top: 0;
-                        right: -10vw;
+                        right: -10dvw;
                         position: absolute;
                         object-fit: cover;
                     }
                 }
 
                 &-col {
-                    width: 40vw;
-                    padding-top: 50vh;
+                    width: 40dvw;
+                    padding-top: 50dvh;
                     z-index: 40;
                 }
             }
