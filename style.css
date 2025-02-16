@@ -331,11 +331,10 @@ main .main-inner .achievements {
   justify-content: flex-start;
   align-items: flex-start;
   flex-flow: column;
-  scroll-snap-align: end;
 }
 main .main-inner .achievements-inner {
   position: sticky;
-  top: 0;
+  top: -1267.016px;
   height: auto;
 }
 main .main-inner .achievements .classroom {
@@ -474,23 +473,65 @@ main .main-inner .achievements .awards-inner-awards-row img {
 }
 main .main-inner .purchase {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #00AFD7;
+  position: relative;
+  z-index: 30;
+}
+main .main-inner .purchase-inner {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  z-index: 30;
+  height: 180vh;
+  position: relative;
+  padding-top: 20vh;
+}
+main .main-inner .purchase-inner-img {
   position: sticky;
-  scroll-snap-align: end;
+  top: 0;
+}
+main .main-inner .purchase-inner-img img {
+  height: 100vh;
+  width: auto;
+}
+main .main-inner .purchase-inner-text {
+  padding-top: 50vh;
+  margin-left: -20vw;
+  z-index: 40;
 }
 main .main-inner .contact {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #00AFD7;
+  z-index: 30;
+  position: relative;
+}
+main .main-inner .contact-inner {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  z-index: 30;
-  position: relative;
-  scroll-snap-align: end;
+  height: 180vh;
+  padding-top: 30vh;
+}
+main .main-inner .contact-inner-img {
+  width: 40vw;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+main .main-inner .contact-inner-img img {
+  height: 100vh;
+  width: 130vh;
+  top: 0;
+  right: -10vw;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .main-inner .contact-inner-col {
+  width: 40vw;
+  padding-top: 50vh;
+  z-index: 40;
 }/*# sourceMappingURL=style.css.map */

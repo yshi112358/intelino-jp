@@ -173,24 +173,35 @@ tl_achievement_end.to('.achievements-inner', {
     y: -100,
 });
 
-classroom_col_container.forEach((e, i) => {
-    window.setTimeout(() => {
-        let classroom_row_width = e.children[0].offsetWidth;
-        console.log(classroom_row_width);
-        gsap.to(e, {
-            x: classroom_row_width * (-1) ** i,
-            duration: 30,
-            ease: "none",
-            repeat: -1,
-        })
-    }, 1000);
-});
+window.setTimeout(setClassroomAnimation, 1000);
+window.addEventListener('resize', setClassroomAnimation);
 
-window.setTimeout(() => {
-    let element = document.querySelector('.achievements-inner');
-    let style = window.getComputedStyle(element);
-    let value = Number(style.getPropertyValue('height').replace('px',''))-window.innerHeight;
-    // console.log(window.innerHeight)
-    // console.log(value);
-    document.querySelector('.achievements-inner').style.top = String(-value)+"px";
-}, 1000);
+function setClassroomAnimation() {
+    classroom_col_container.forEach((e, i) => {
+        let classroom_row_width = e.children[0].offsetWidth;
+        e.animate([
+            { transform: 'translateX(0)' },
+            { transform: 'translateX(' + classroom_row_width * (-1) ** i + 'px)' },
+        ], {
+            duration: 20000,
+            iterations: Infinity,
+        });
+    });
+}
+
+window.setTimeout(setAwardSnap, 1000);
+window.addEventListener('resize', setAwardSnap);
+
+function setAwardSnap() {
+    let classroom = document.querySelector('.classroom');
+    let style_c = window.getComputedStyle(classroom);
+    let value_c = Number(style_c.getPropertyValue('height').replace('px', ''));
+
+    let awards = document.querySelector('.awards');
+    let style_a = window.getComputedStyle(awards);
+    let value_a = Number(style_a.getPropertyValue('height').replace('px', ''));
+
+    let vw = window.innerWidth / 100;
+    let value = value_c + 2 * vw - (window.innerHeight - value_a - 2 * vw);
+    document.querySelector('.achievements-inner').style.top = String(-value) + "px";
+}
