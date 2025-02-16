@@ -13,18 +13,18 @@ const tl_top = gsap.timeline({
 });
 
 tl_top.to('.top-inner', {
-    width: '100vw',
-    height: '100vh',
-    "border-radius": '0vh',
-    "margin-top": '0vh',
+    width: '100dvw',
+    height: '100dvh',
+    "border-radius": '0dvh',
+    "margin-top": '0dvh',
     duration: 1,
 }, "top-inner").to('.top-inner-text', {
     opacity: 0,
     duration: 1,
 }, "top-inner").to('.header-inner', {
     scale: 0.8,
-    y: "-1vh",
-    width: "150vh"
+    y: "-1dvh",
+    width: "150dvh"
 }, "top-inner").to('.top-inner-cover', 10, {
     opacity: 0.7,
 }, "top-inner-cover").fromTo('.about-inner-img', 10, {
@@ -54,11 +54,11 @@ tl_about_start.fromTo('.about-inner-text',
         scaleX: 1,
     }, "about-inner").fromTo('.about-inner-cover', {
         autoAlpha: 0,
-        y: "-10vh",
+        y: "-10dvh",
         scale: 2,
     }, {
         autoAlpha: 1,
-        y: "0vh",
+        y: "0dvh",
         scale: 1,
     }, "about-inner");
 
@@ -80,10 +80,10 @@ tl_about_end.to('.about-inner-cover-detail', {
     opacity: 0,
 }, "<").to('.about-inner-img', {
     opacity: 0,
-    x: "20vw",
+    x: "20dvw",
 }, "<").to('.top-inner', {
     opacity: 0,
-    y: "-10vh",
+    y: "-10dvh",
     scaleY: 1.2
 }, "<").to(".main-inner", {
     // "scroll-snap-type": "none",
@@ -201,7 +201,7 @@ function setAwardSnap() {
     let style_a = window.getComputedStyle(awards);
     let value_a = Number(style_a.getPropertyValue('height').replace('px', ''));
 
-    let vw = window.innerWidth / 100;
-    let value = value_c + 2 * vw - (window.innerHeight - value_a - 2 * vw);
+    let dvw = window.innerWidth / 100;
+    let value = value_c + 2 * dvw - (window.innerHeight - value_a - 2 * dvw);
     document.querySelector('.achievements-inner').style.top = String(-value) + "px";
 }
