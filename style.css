@@ -1,8 +1,9 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
   font-family: "Noto Sans JP", sans-serif;
-  background-color: #00AFD7;
+  background-color: #00afd7;
 }
 
 header {
@@ -17,8 +18,8 @@ header {
 }
 header .header-inner {
   margin: 10px;
-  background-color: #00AFD7;
-  color: #FFFFFF;
+  background-color: #00afd7;
+  color: #ffffff;
   border-radius: 2dvh;
   width: 90dvw;
   height: 10dvh;
@@ -53,7 +54,7 @@ header .header-inner .global-nav ul li {
 }
 header .header-inner .global-nav ul li a {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #ffffff;
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -81,8 +82,17 @@ header .header-inner .global-nav ul li .vertical-line img {
 h1 {
   display: block;
   white-space: nowrap;
-  color: #FFD400;
+  color: #ffd400;
   font-size: 10dvh;
+  font-weight: bold;
+  margin-bottom: 3dvh;
+}
+
+h3 {
+  display: block;
+  white-space: nowrap;
+  color: #ffffff;
+  font-size: 4dvh;
   font-weight: bold;
   margin-bottom: 3dvh;
 }
@@ -90,7 +100,7 @@ h1 {
 p {
   display: block;
   white-space: nowrap;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 3dvh;
   font-weight: regular;
   margin-left: 1dvw;
@@ -99,6 +109,8 @@ p {
 
 main {
   position: absolute;
+  width: 100dvw;
+  height: 100dvh;
 }
 main .main-inner {
   position: absolute;
@@ -110,7 +122,7 @@ main .main-inner {
 main .main-inner .top {
   width: 100dvw;
   height: 100dvh;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -136,7 +148,7 @@ main .main-inner .top-inner-text {
 main .main-inner .top-inner-text h1 {
   display: block;
   white-space: nowrap;
-  color: #FFD400;
+  color: #ffd400;
   font-size: 10dvh;
   font-weight: bold;
   margin-bottom: 2dvh;
@@ -144,7 +156,7 @@ main .main-inner .top-inner-text h1 {
 main .main-inner .top-inner-text p {
   display: block;
   white-space: nowrap;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 3dvh;
   font-weight: regular;
   margin-bottom: 1dvh;
@@ -164,7 +176,7 @@ main .main-inner .about {
   width: 100dvw;
   height: 300dvh;
   scroll-snap-align: end;
-  background-color: #00AFD7;
+  background-color: #00afd7;
 }
 main .main-inner .about-inner {
   position: inherit;
@@ -214,7 +226,7 @@ main .main-inner .about-inner-cover-detail-background {
   display: block;
   width: 80dvh;
   height: 13dvh;
-  background-color: #B2AEAE;
+  background-color: #b2aeae;
   position: absolute;
   border-radius: 2dvh;
 }
@@ -300,7 +312,7 @@ main .main-inner .learn-inner-text {
 main .main-inner .learn-inner-text h1 {
   display: block;
   white-space: nowrap;
-  color: #FFD400;
+  color: #ffd400;
   font-size: 10dvh;
   font-weight: bold;
   margin-bottom: 3dvh;
@@ -308,7 +320,7 @@ main .main-inner .learn-inner-text h1 {
 main .main-inner .learn-inner-text p {
   display: block;
   white-space: nowrap;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 3dvh;
   font-weight: regular;
   margin-bottom: 2dvh;
@@ -318,13 +330,13 @@ main .main-inner .learn-inner2 {
   top: 100dvh;
   width: 50dvw;
   height: 300dvh;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   right: 0;
 }
 main .main-inner .achievements {
   width: 100dvw;
   height: 400dvh;
-  background-color: #FFD400;
+  background-color: #ffd400;
   z-index: 30;
   position: relative;
   display: flex;
@@ -348,7 +360,7 @@ main .main-inner .achievements .classroom-inner {
   margin: 2dvw 2dvw 0 2dvw;
   border-radius: 5dvh 5dvh 0 0;
   width: 96dvw;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   height: auto;
   display: flex;
   flex-flow: column;
@@ -395,7 +407,7 @@ main .main-inner .achievements .classroom-inner-classroom-col-container-row-img 
   position: relative;
   width: auto;
   height: 28dvh;
-  background-color: #F9423A;
+  background-color: #f9423a;
   position: relative;
   z-index: 40;
   border-radius: 2dvh;
@@ -417,7 +429,7 @@ main .main-inner .achievements .classroom-inner-classroom-frame {
 main .main-inner .achievements .classroom-inner-classroom-frame .classroom-inner-classroom-frame-right, main .main-inner .achievements .classroom-inner-classroom-frame .classroom-inner-classroom-frame-left {
   width: 2dvw;
   height: 60dvh;
-  background-color: #FFD400;
+  background-color: #ffd400;
   position: absolute;
   top: 0;
 }
@@ -437,7 +449,7 @@ main .main-inner .achievements .awards-inner {
   margin: 0 2dvw 2dvw 2dvw;
   border-radius: 0 0 5dvh 5dvh;
   width: 96dvw;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   height: auto;
   display: flex;
   flex-flow: column;
@@ -474,7 +486,7 @@ main .main-inner .achievements .awards-inner-awards-row img {
 main .main-inner .purchase {
   width: 100dvw;
   height: auto;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   position: relative;
   z-index: 30;
 }
@@ -493,6 +505,12 @@ main .main-inner .purchase-inner-img {
 main .main-inner .purchase-inner-img img {
   height: 100dvh;
   width: auto;
+  /** マスクレイヤーにグラデーションを指定 */
+  -webkit-mask-image: linear-gradient(to right, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+          mask-image: linear-gradient(to right, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
+  /** マスクの合成モードを設定 */
+  -webkit-mask-composite: source-in, xor;
+          mask-composite: intersect;
 }
 main .main-inner .purchase-inner-text {
   padding-top: 50dvh;
@@ -502,7 +520,7 @@ main .main-inner .purchase-inner-text {
 main .main-inner .contact {
   width: 100dvw;
   height: auto;
-  background-color: #00AFD7;
+  background-color: #00afd7;
   z-index: 30;
   position: relative;
 }
@@ -515,6 +533,7 @@ main .main-inner .contact-inner {
 }
 main .main-inner .contact-inner-img {
   width: 40dvw;
+  height: 100%;
   position: sticky;
   top: 0;
   display: flex;
@@ -534,4 +553,49 @@ main .main-inner .contact-inner-col {
   width: 40dvw;
   padding-top: 50dvh;
   z-index: 40;
+}
+main .main-inner .company {
+  width: 100dvw;
+  height: auto;
+  background-color: #00afd7;
+}
+main .main-inner .company-inner {
+  width: 100dvw;
+  height: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+main .main-inner .company-inner .divider {
+  width: 90dvw;
+  height: 0.6dvh;
+  border-radius: 0.3dvh;
+  background-color: #ffffff;
+  margin: 2dvh 0;
+}
+main .main-inner .company-inner-text {
+  width: 70dvw;
+  margin-top: 5dvh;
+}
+main .main-inner .company-inner-text p {
+  text-wrap: wrap;
+}
+
+footer {
+  position: relative;
+  width: 100dvw;
+  height: auto;
+  background-color: #000000;
+}
+footer .footer-inner {
+  width: 100dvw;
+  height: auto;
+  padding: 5dvh;
+}
+footer .footer-inner a img {
+  height: 10dvh;
+}
+footer .footer-inner p {
+  margin-bottom: 1dvh;
 }/*# sourceMappingURL=style.css.map */

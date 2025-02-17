@@ -1,15 +1,15 @@
-$blue: #00AFD7;
-$red: #F9423A;
-$yellow: #FFD400;
+$blue: #00afd7;
+$red: #f9423a;
+$yellow: #ffd400;
 $black: #000000;
-$gray: #B2AEAE;
-$white: #FFFFFF;
+$gray: #b2aeae;
+$white: #ffffff;
 $header-height: 20dvh;
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: "Noto Sans JP", sans-serif;
     background-color: $blue;
 }
 
@@ -95,7 +95,6 @@ header {
                     }
                 }
             }
-
         }
     }
 }
@@ -105,6 +104,15 @@ h1 {
     white-space: nowrap;
     color: $yellow;
     font-size: 10dvh;
+    font-weight: bold;
+    margin-bottom: 3dvh;
+}
+
+h3 {
+    display: block;
+    white-space: nowrap;
+    color: $white;
+    font-size: 4dvh;
     font-weight: bold;
     margin-bottom: 3dvh;
 }
@@ -121,15 +129,15 @@ p {
 
 main {
     position: absolute;
+    width: 100dvw;
+    height: 100dvh;
 
     .main-inner {
-        // scroll-snap-type: y mandatory;
         position: absolute;
         overflow-y: scroll;
         scrollbar-width: none;
         width: 100dvw;
         height: 100dvh;
-
 
         .top {
             width: 100dvw;
@@ -142,7 +150,7 @@ main {
             scroll-snap-align: end;
 
             &-inner {
-                background-image: url('./img/intelino-video.webp');
+                background-image: url("./img/intelino-video.webp");
                 background-size: cover;
                 background-position: bottom;
                 width: 80dvw;
@@ -152,7 +160,8 @@ main {
                 position: fixed;
                 z-index: 10;
                 pointer-events: none;
-                box-shadow: inset 2dvh 2dvh 2dvh rgba($color: #000000, $alpha: 0.5),
+                box-shadow: inset 2dvh 2dvh 2dvh
+                        rgba($color: #000000, $alpha: 0.5),
                     inset -2dvh -2dvh 2dvh rgba($color: #000000, $alpha: 0.5);
 
                 &-text {
@@ -174,8 +183,10 @@ main {
                         font-size: 3dvh;
                         font-weight: regular;
                         margin-bottom: 1dvh;
-                        text-shadow: 0.1dvh 0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5),
-                            -0.1dvh -0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5);
+                        text-shadow: 0.1dvh 0.1dvh 1dvh
+                                rgba($color: #000000, $alpha: 0.5),
+                            -0.1dvh -0.1dvh 1dvh
+                                rgba($color: #000000, $alpha: 0.5);
                         // background-color: $blue;
                     }
                 }
@@ -189,7 +200,6 @@ main {
                     top: 0;
                     opacity: 0;
                 }
-
             }
         }
 
@@ -210,7 +220,7 @@ main {
 
                 &-text {
                     position: sticky;
-                    top: 5dvh+$header-height;
+                    top: 5dvh + $header-height;
                     z-index: 30;
                     width: 100dvw;
                     left: 0;
@@ -222,7 +232,7 @@ main {
                 &-img {
                     width: 100dvw;
                     height: 100dvh;
-                    background-image: url('./img/intelino-yellow.png');
+                    background-image: url("./img/intelino-yellow.png");
                     background-size: cover;
                     background-position: bottom;
                     position: fixed;
@@ -378,8 +388,7 @@ main {
         }
 
         $award_width: 96dvw;
-        $award_inner_posion: (
-            100dvw - $award_width)/2;
+        $award_inner_posion: (100dvw - $award_width)/2;
 
         $achievement_margin: 2dvw;
         $achievement_width: 100dvw;
@@ -541,7 +550,6 @@ main {
                         width: 80dvw;
                     }
 
-
                     &-awards {
                         width: 80dvw;
                         height: 20dvh;
@@ -591,6 +599,15 @@ main {
                     img {
                         height: 100dvh;
                         width: auto;
+                        /** マスクレイヤーにグラデーションを指定 */
+                        mask-image: linear-gradient(
+                            to right,
+                            rgb(0 0 0 / 100%) 90%,
+                            rgb(0 0 0 / 0%) 100%
+                        );
+
+                        /** マスクの合成モードを設定 */
+                        mask-composite: intersect;
                     }
                 }
 
@@ -619,6 +636,7 @@ main {
 
                 &-img {
                     width: 40dvw;
+                    height: 100%;
                     position: sticky;
                     top: 0;
                     display: flex;
@@ -641,6 +659,61 @@ main {
                     z-index: 40;
                 }
             }
+        }
+
+        .company {
+            width: 100dvw;
+            height: auto;
+            background-color: $blue;
+
+            &-inner {
+                width: 100dvw;
+                height: auto;
+                display: flex;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+
+                .divider {
+                    width: 90dvw;
+                    height: 0.6dvh;
+                    border-radius: 0.3dvh;
+                    background-color: $white;
+                    margin: 2dvh 0;
+                }
+
+                &-text {
+                    width: 70dvw;
+                    margin-top: 5dvh;
+
+                    p {
+                        text-wrap: wrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: relative;
+    width: 100dvw;
+    height: auto;
+    background-color: $black;
+
+    .footer-inner {
+        width: 100dvw;
+        height: auto;
+        padding: 5dvh;
+
+        a {
+            img {
+                height: 10dvh;
+            }
+        }
+
+        p {
+            margin-bottom: 1dvh;
         }
     }
 }
