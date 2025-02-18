@@ -206,3 +206,47 @@ function setAwardSnap() {
     let value = value_c + 2 * dvw - (window.innerHeight - value_a - 2 * dvw);
     document.querySelector('.achievements-inner').style.top = String(-value) + "px";
 }
+
+
+const tl_purchase_start = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.purchase',
+        start: 'top center',
+        end: 'top center',
+        // markers: true,
+        scrub: 0.7,
+    }
+});
+
+tl_purchase_start.fromTo('.purchase-inner-img',
+    {
+        autoAlpha: 0,
+        y: 100,
+    },
+    {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "purchase-inner").fromTo('.purchase-inner-text', {
+        autoAlpha: 0,
+        y: 100,
+    }, {
+        duration: 0.5,
+        autoAlpha: 1,
+        y: 0,
+    }, "purchase-inner");
+
+const tl_purchase_end = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.purchase',
+        start: 'bottom-=30% top',
+        end: 'bottom top',
+        // markers: true,
+        scrub: 0.7,
+    }
+});
+
+tl_purchase_end.to('.purchase-inner', {
+    opacity: 0,
+    y: -100,
+});

@@ -2,7 +2,7 @@
 const classroom_col = document.querySelector('.classroom-inner-classroom-col');
 
 const img_amount = 33;
-const column_amount = 2;
+const column_amount = 3;
 
 for (let i = 0; i < column_amount; i++) {
     const container = document.createElement('div');

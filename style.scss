@@ -103,7 +103,7 @@ h1 {
     display: block;
     white-space: nowrap;
     color: $yellow;
-    font-size: 10dvh;
+    font-size: 8dvh;
     font-weight: bold;
     margin-bottom: 3dvh;
 }
@@ -171,7 +171,6 @@ main {
                         display: block;
                         white-space: nowrap;
                         color: $yellow;
-                        font-size: 10dvh;
                         font-weight: bold;
                         margin-bottom: 2dvh;
                     }
@@ -180,14 +179,12 @@ main {
                         display: block;
                         white-space: nowrap;
                         color: $white;
-                        font-size: 3dvh;
                         font-weight: regular;
                         margin-bottom: 1dvh;
                         text-shadow: 0.1dvh 0.1dvh 1dvh
                                 rgba($color: #000000, $alpha: 0.5),
                             -0.1dvh -0.1dvh 1dvh
                                 rgba($color: #000000, $alpha: 0.5);
-                        // background-color: $blue;
                     }
                 }
 
@@ -301,7 +298,7 @@ main {
 
         .learn {
             width: 100dvw;
-            height: 200dvh;
+            height: 300dvh;
             display: flex;
             justify-content: center;
             align-items: flex-start;
@@ -398,7 +395,8 @@ main {
 
         .achievements {
             width: $achievement_width;
-            height: 400dvh;
+            //ここのheightを変えることでawardsのスクロール量を調整
+            height: 600dvh;
             background-color: $yellow;
             z-index: 30;
             position: relative;
@@ -416,7 +414,7 @@ main {
 
             .classroom {
                 //ここのheightを変えることでスクロール量を調整
-                height: 200dvh;
+                height: 300dvh;
                 width: 100dvw;
                 position: relative;
 
@@ -428,6 +426,7 @@ main {
                     width: $achievement_inner_width;
                     background-color: $blue;
                     height: auto;
+                    padding-bottom: 1dvh; //受賞歴との繋ぎ用（これがないと黄色い線が混入する）
 
                     // flex設定
                     display: flex;
@@ -439,29 +438,44 @@ main {
                         position: relative;
                         margin-top: $header-height - 6dvh;
                         margin-bottom: 3dvh;
+                        width: 80dvw;
                     }
 
                     &-classroom {
                         $classroom_height: 60dvh;
-                        height: $classroom_height;
-                        width: 100dvw;
+                        height: auto;
+                        width: 100dvw - $achievement_margin * 2;
                         display: flex;
                         justify-content: center;
                         position: relative; //これ重要
+                        /** マスクレイヤーにグラデーションを指定 */
+                        mask-image: linear-gradient(
+                                to right,
+                                rgb(0 0 0 / 100%) 95%,
+                                rgb(0 0 0 / 0%) 100%
+                            ),
+                            linear-gradient(
+                                to left,
+                                rgb(0 0 0 / 100%) 95%,
+                                rgb(0 0 0 / 0%) 100%
+                            );
+
+                        /** マスクの合成モードを設定 */
+                        mask-composite: intersect;
 
                         &-col {
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             width: 100dvw;
-                            height: $classroom_height;
+                            height: auto;
                             flex-flow: column;
                             overflow: hidden;
 
                             &-container {
                                 display: flex;
                                 width: 100dvw;
-                                height: $classroom_height/2;
+                                height: auto;
                                 flex-flow: row;
                                 flex-wrap: nowrap;
 
@@ -470,18 +484,17 @@ main {
                                     justify-content: center;
                                     align-items: center;
                                     width: auto;
-                                    height: $classroom_height/2;
+                                    height: auto;
                                     flex-flow: row;
 
                                     &-img {
                                         position: relative;
                                         width: auto;
-                                        height: $classroom_height/2 - 2dvh;
-                                        background-color: $red;
+                                        height: $classroom_height/2;
                                         position: relative;
                                         z-index: 40;
                                         border-radius: 2dvh;
-                                        margin: 1dvh;
+                                        padding: 1dvh;
                                     }
                                 }
                             }
@@ -495,31 +508,31 @@ main {
                             }
                         }
 
-                        &-frame {
-                            width: 100dvw;
-                            height: $classroom_height;
-                            position: absolute;
-                            z-index: 50;
-                            top: 0;
+                        // &-frame {
+                        //     width: 100dvw;
+                        //     height: 100%;
+                        //     position: absolute;
+                        //     z-index: 50;
+                        //     top: 0;
 
-                            %frame_shape {
-                                width: $achievement_margin;
-                                height: $classroom_height;
-                                background-color: $yellow;
-                                position: absolute;
-                                top: 0;
-                            }
+                        //     %frame_shape {
+                        //         width: $achievement_margin;
+                        //         height: 100%;
+                        //         background-color: $yellow;
+                        //         position: absolute;
+                        //         top: 0;
+                        //     }
 
-                            &-left {
-                                @extend %frame_shape;
-                                left: 0;
-                            }
+                        //     &-left {
+                        //         @extend %frame_shape;
+                        //         left: 0;
+                        //     }
 
-                            &-right {
-                                @extend %frame_shape;
-                                right: 0;
-                            }
-                        }
+                        //     &-right {
+                        //         @extend %frame_shape;
+                        //         right: 0;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -545,7 +558,7 @@ main {
 
                     &-text {
                         position: relative;
-                        margin-top: $header-height - 6dvh;
+                        margin-top: $header-height - 10dvh;
                         margin-bottom: 3dvh;
                         width: 80dvw;
                     }
@@ -579,22 +592,27 @@ main {
 
         .purchase {
             width: 100dvw;
-            height: auto;
+            height: 300dvh;
             background-color: $blue;
             position: relative;
             z-index: 30;
 
             &-inner {
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                height: 180dvh;
                 position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                height: 120dvh+30dvh+150dvh;
                 padding-top: 20dvh;
+                width: 90dvw;
+                margin-left: 5dvw;
+                flex-wrap: nowrap;
 
                 &-img {
                     position: sticky;
                     top: 0;
+                    height: auto;
+                    width: 45dvw;
 
                     img {
                         height: 100dvh;
@@ -608,55 +626,108 @@ main {
 
                         /** マスクの合成モードを設定 */
                         mask-composite: intersect;
+
+                        object-fit: contain;
                     }
                 }
 
-                &-text {
-                    padding-top: 50dvh;
-                    margin-left: -20dvw;
+                &-col {
+                    position: sticky;
+                    top: 40dvh;
+                    margin-top: 70dvh;
+                    // margin-left: -200dvw;
                     z-index: 40;
+                    background-color: $blue;
+                    padding: 1dvh 2dvh;
+                    width: 45dvw;
+                    height: auto;
+
+                    &-text {
+                        position: relative;
+                        width: auto;
+                        height: auto;
+
+                        p {
+                            text-wrap: wrap;
+                            width: 40dvw;
+                        }
+                    }
+
+                    &-button {
+                        position: relative;
+                        width: auto;
+                        height: auto;
+                        padding-left: 1dvh;
+                        margin-bottom: 5dvh;
+                        img {
+                            object-fit: contain;
+                        }
+                        .mercari {
+                            width: 20dvh;
+                            height: 10dvh;
+                            background-color: $white;
+                            border-radius: 2dvh;
+                        }
+                    }
                 }
             }
         }
 
         .contact {
             width: 100dvw;
-            height: auto;
+            height: 300dvh;
             background-color: $blue;
 
             z-index: 30;
             position: relative;
 
             &-inner {
+                position: sticky;
+                top: 0;
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: flex-start;
-                height: 180dvh;
-                padding-top: 30dvh;
+                height: 100dvh;
+                width: 90dvw;
+                margin-left: 5dvw;
+                // padding-top: 30dvh;
 
                 &-img {
-                    width: 40dvw;
-                    height: 100%;
-                    position: sticky;
-                    top: 0;
+                    width: 45dvw;
+                    height: 100dvh;
+                    position: absolute;
+                    // top: 0;
+                    right: 5dvh;
+                    bottom: 5dvh;
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
 
                     img {
                         height: 100dvh;
-                        width: 130dvh;
-                        top: 0;
-                        right: -10dvw;
-                        position: absolute;
-                        object-fit: cover;
+                        width: 45dvw;
+                        object-fit: contain;
+                        object-position: 100% 90%;
                     }
                 }
 
                 &-col {
-                    width: 40dvw;
-                    padding-top: 50dvh;
+                    padding: 1dvh 2dvh;
+                    width: auto;
+                    height: auto;
+                    margin-top: $header-height - 3dvh;
                     z-index: 40;
+
+                    &-text {
+                        h1 {
+                            width: 80dvw;
+                        }
+                    }
+                    &-form {
+                        color: $white;
+                        font-size: 3dvh;
+                        padding-left: 10dvh;
+                    }
                 }
             }
         }
@@ -665,6 +736,7 @@ main {
             width: 100dvw;
             height: auto;
             background-color: $blue;
+            z-index: 30;
 
             &-inner {
                 width: 100dvw;
@@ -679,12 +751,11 @@ main {
                     height: 0.6dvh;
                     border-radius: 0.3dvh;
                     background-color: $white;
-                    margin: 2dvh 0;
+                    margin: 10dvh 0;
                 }
 
                 &-text {
-                    width: 70dvw;
-                    margin-top: 5dvh;
+                    width: 80dvw;
 
                     p {
                         text-wrap: wrap;
