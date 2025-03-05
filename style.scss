@@ -97,6 +97,24 @@ header {
             }
         }
     }
+    @media screen and (max-width: 100dvh) {
+        height: 15dvh;
+        .header-inner {
+            height: 10dvh;
+        }
+        .global-nav {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 70dvh) {
+        height: 13dvh;
+        .header-inner {
+            height: 10dvh;
+        }
+        .global-nav {
+            display: none;
+        }
+    }
 }
 
 h1 {
@@ -166,6 +184,7 @@ main {
 
                 &-text {
                     margin: 5dvh;
+                    display: block;
 
                     h1 {
                         display: block;
@@ -188,6 +207,62 @@ main {
                     }
                 }
 
+                @media screen and (max-width: 100dvh) {
+                    width: 90dvw;
+                    height: 60dvh;
+                    border-radius: 4dvw;
+                    margin-top: 15dvh;
+                    background-repeat: no-repeat;
+                    background-color: $black;
+                    background-position: bottom 5dvh center;
+                    background-size: cover;
+                    &-text {
+                        margin: 5dvh;
+                        display: block;
+
+                        h1 {
+                            display: block;
+                            white-space: nowrap;
+                            color: $yellow;
+                            font-weight: bold;
+                            margin-bottom: 2dvh;
+                            font-size: 8dvw;
+                        }
+
+                        p {
+                            display: block;
+                            white-space: wrap;
+                            color: $white;
+                            font-weight: regular;
+                            margin-bottom: 1dvh;
+                            text-shadow: 0.1dvh 0.1dvh 1dvh
+                                    rgba($color: #000000, $alpha: 0.5),
+                                -0.1dvh -0.1dvh 1dvh
+                                    rgba($color: #000000, $alpha: 0.5);
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 70dvh) {
+                    width: 90dvw;
+                    height: 70dvh;
+                    border-radius: 5dvw;
+                    background-size: 170%;
+                    margin-top: 13dvh;
+                    &-text {
+                        margin: 2dvh;
+                        h1 {
+                            font-size: 13dvw;
+                            margin-bottom: 0;
+                        }
+                        &-smartphone {
+                            margin-top: 1dvh;
+                            p {
+                                font-size: 4dvw;
+                            }
+                        }
+                    }
+                }
                 &-cover {
                     display: block;
                     width: 100%;
@@ -236,6 +311,15 @@ main {
                     pointer-events: none;
                     top: 0;
                     z-index: 20;
+
+                    @media screen and (max-width: 100dvh) {
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-position: bottom 5dvh center;
+                    }
+                    @media screen and (max-width: 70dvh) {
+                        background-size: 170%;
+                    }
                 }
 
                 &-cover {
@@ -786,6 +870,38 @@ main {
                         text-wrap: wrap;
                     }
                 }
+            }
+        }
+        .laptop {
+            display: block;
+        }
+        .tablet {
+            display: none;
+        }
+        .smartphone {
+            display: none;
+        }
+
+        @media screen and (max-width: 100dvh) {
+            .laptop {
+                display: none;
+            }
+            .tablet {
+                display: block;
+            }
+            .smartphone {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 70dvh) {
+            .laptop {
+                display: none;
+            }
+            .tablet {
+                display: none;
+            }
+            .smartphone {
+                display: block;
             }
         }
     }
