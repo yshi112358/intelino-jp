@@ -723,10 +723,35 @@ main {
                             width: 80dvw;
                         }
                     }
-                    &-form {
-                        color: $white;
-                        font-size: 3dvh;
-                        padding-left: 10dvh;
+                    &-button {
+                        width: 30dvh;
+                        height: 10dvh;
+                        margin-top: 40dvh;
+                        background-color: $white;
+                        border-radius: 2dvh;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        a {
+                            width: 20dvw;
+                            height: auto;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            svg {
+                                width: 5dvh;
+                                height: 5dvh;
+                                margin-right: 1dvh;
+                            }
+                            .text {
+                                width: auto;
+                                height: auto;
+                                color: $black;
+                                font-size: 3dvh;
+                                font-weight: bold;
+                            }
+                        }
                     }
                 }
             }

@@ -585,10 +585,34 @@ main .main-inner .contact-inner-col {
 main .main-inner .contact-inner-col-text h1 {
   width: 80dvw;
 }
-main .main-inner .contact-inner-col-form {
-  color: #ffffff;
+main .main-inner .contact-inner-col-button {
+  width: 30dvh;
+  height: 10dvh;
+  margin-top: 40dvh;
+  background-color: #ffffff;
+  border-radius: 2dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .main-inner .contact-inner-col-button a {
+  width: 20dvw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .main-inner .contact-inner-col-button a svg {
+  width: 5dvh;
+  height: 5dvh;
+  margin-right: 1dvh;
+}
+main .main-inner .contact-inner-col-button a .text {
+  width: auto;
+  height: auto;
+  color: #000000;
   font-size: 3dvh;
-  padding-left: 10dvh;
+  font-weight: bold;
 }
 main .main-inner .company {
   width: 100dvw;
