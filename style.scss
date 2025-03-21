@@ -117,18 +117,25 @@ header {
     }
 }
 
+$max-width-tablet: 100dvh;
+$max-width-smartphone: 70dvh;
 h1 {
     display: block;
-    white-space: nowrap;
     color: $yellow;
-    font-size: 8dvh;
     font-weight: bold;
     margin-bottom: 3dvh;
+    font-size: 10dvh;
+
+    @media screen and (max-width: $max-width-tablet) {
+        font-size: 8dvh;
+    }
+    @media screen and (max-width: $max-width-smartphone) {
+        font-size: 8dvw;
+    }
 }
 
 h3 {
     display: block;
-    white-space: nowrap;
     color: $white;
     font-size: 4dvh;
     font-weight: bold;
@@ -137,12 +144,19 @@ h3 {
 
 p {
     display: block;
-    white-space: nowrap;
     color: $white;
-    font-size: 3dvh;
     font-weight: regular;
     margin-left: 1dvw;
     margin-bottom: 2dvh;
+    text-wrap: wrap;
+    font-size: 3dvh;
+
+    @media screen and (max-width: $max-width-tablet) {
+        font-size: 3dvh;
+    }
+    @media screen and (max-width: $max-width-smartphone) {
+        font-size: 4dvw;
+    }
 }
 
 main {
@@ -182,40 +196,8 @@ main {
                         rgba($color: #000000, $alpha: 0.5),
                     inset -2dvh -2dvh 2dvh rgba($color: #000000, $alpha: 0.5);
 
-                &-text {
-                    margin: 5dvh;
-                    display: block;
-
-                    h1 {
-                        display: block;
-                        white-space: nowrap;
-                        color: $yellow;
-                        font-weight: bold;
-                        margin-bottom: 2dvh;
-                    }
-
-                    p {
-                        display: block;
-                        white-space: nowrap;
-                        color: $white;
-                        font-weight: regular;
-                        margin-bottom: 1dvh;
-                        text-shadow: 0.1dvh 0.1dvh 1dvh
-                                rgba($color: #000000, $alpha: 0.5),
-                            -0.1dvh -0.1dvh 1dvh
-                                rgba($color: #000000, $alpha: 0.5);
-                    }
-                }
-
-                @media screen and (max-width: 100dvh) {
-                    width: 90dvw;
-                    height: 60dvh;
-                    border-radius: 4dvw;
-                    margin-top: 15dvh;
-                    background-repeat: no-repeat;
-                    background-color: $black;
-                    background-position: bottom 5dvh center;
-                    background-size: cover;
+                //Laptop
+                @media screen {
                     &-text {
                         margin: 5dvh;
                         display: block;
@@ -223,17 +205,9 @@ main {
                         h1 {
                             display: block;
                             white-space: nowrap;
-                            color: $yellow;
-                            font-weight: bold;
-                            margin-bottom: 2dvh;
-                            font-size: 8dvw;
                         }
 
                         p {
-                            display: block;
-                            white-space: wrap;
-                            color: $white;
-                            font-weight: regular;
                             margin-bottom: 1dvh;
                             text-shadow: 0.1dvh 0.1dvh 1dvh
                                     rgba($color: #000000, $alpha: 0.5),
@@ -243,7 +217,31 @@ main {
                     }
                 }
 
-                @media screen and (max-width: 70dvh) {
+                //Tablet
+                @media screen and (max-width: $max-width-tablet) {
+                    width: 90dvw;
+                    height: 60dvh;
+                    border-radius: 4dvw;
+                    margin-top: 15dvh;
+                    background-repeat: no-repeat;
+                    background-color: $black;
+                    background-size: cover;
+                    &-text {
+                        margin: 5dvh;
+                        display: block;
+
+                        p {
+                            margin-bottom: 1dvh;
+                            text-shadow: 0.1dvh 0.1dvh 1dvh
+                                    rgba($color: #000000, $alpha: 0.5),
+                                -0.1dvh -0.1dvh 1dvh
+                                    rgba($color: #000000, $alpha: 0.5);
+                        }
+                    }
+                }
+
+                //SmartPhone
+                @media screen and (max-width: $max-width-smartphone) {
                     width: 90dvw;
                     height: 70dvh;
                     border-radius: 5dvw;
@@ -252,17 +250,14 @@ main {
                     &-text {
                         margin: 2dvh;
                         h1 {
-                            font-size: 13dvw;
                             margin-bottom: 0;
                         }
                         &-smartphone {
                             margin-top: 1dvh;
-                            p {
-                                font-size: 4dvw;
-                            }
                         }
                     }
                 }
+
                 &-cover {
                     display: block;
                     width: 100%;
@@ -312,12 +307,11 @@ main {
                     top: 0;
                     z-index: 20;
 
-                    @media screen and (max-width: 100dvh) {
+                    @media screen and (max-width: $max-width-tablet) {
                         background-size: cover;
                         background-repeat: no-repeat;
-                        background-position: bottom 5dvh center;
                     }
-                    @media screen and (max-width: 70dvh) {
+                    @media screen and (max-width: $max-width-smartphone) {
                         background-size: 170%;
                     }
                 }
@@ -437,24 +431,6 @@ main {
                     top: 40dvh;
                     left: 5dvh;
                     z-index: 30;
-
-                    h1 {
-                        display: block;
-                        white-space: nowrap;
-                        color: $yellow;
-                        font-size: 10dvh;
-                        font-weight: bold;
-                        margin-bottom: 3dvh;
-                    }
-
-                    p {
-                        display: block;
-                        white-space: nowrap;
-                        color: $white;
-                        font-size: 3dvh;
-                        font-weight: regular;
-                        margin-bottom: 2dvh;
-                    }
                 }
             }
 
@@ -574,7 +550,16 @@ main {
                                     &-img {
                                         position: relative;
                                         width: auto;
-                                        height: $classroom_height/2;
+
+                                        @media screen {
+                                            height: 25dvh;
+                                        }
+                                        @media screen and (max-width: $max-width-tablet) {
+                                            height: 30dvh;
+                                        }
+                                        @media screen and (max-width: $max-width-smartphone) {
+                                            height: 40dvw;
+                                        }
                                         position: relative;
                                         z-index: 40;
                                         border-radius: 2dvh;
@@ -591,32 +576,6 @@ main {
                                 justify-content: flex-start;
                             }
                         }
-
-                        // &-frame {
-                        //     width: 100dvw;
-                        //     height: 100%;
-                        //     position: absolute;
-                        //     z-index: 50;
-                        //     top: 0;
-
-                        //     %frame_shape {
-                        //         width: $achievement_margin;
-                        //         height: 100%;
-                        //         background-color: $yellow;
-                        //         position: absolute;
-                        //         top: 0;
-                        //     }
-
-                        //     &-left {
-                        //         @extend %frame_shape;
-                        //         left: 0;
-                        //     }
-
-                        //     &-right {
-                        //         @extend %frame_shape;
-                        //         right: 0;
-                        //     }
-                        // }
                     }
                 }
             }
@@ -645,11 +604,12 @@ main {
                         margin-top: $header-height - 10dvh;
                         margin-bottom: 3dvh;
                         width: 80dvw;
+                        height: auto;
                     }
 
                     &-awards {
                         width: 80dvw;
-                        height: 20dvh;
+                        height: auto;
                         display: flex;
                         justify-content: start;
                         align-items: center;
@@ -662,11 +622,19 @@ main {
                             justify-content: start;
                             align-items: center;
                             width: 100dvw;
+                            height: auto;
 
                             img {
-                                width: 20dvh;
-                                height: 20dvh;
+                                width: 15dvh;
+                                height: auto;
                                 margin: 2dvh;
+
+                                @media screen and (max-width: $max-width-tablet) {
+                                    width: 10dvh;
+                                }
+                                @media screen and (max-width: $max-width-smartphone) {
+                                    width: 10dvw;
+                                }
                             }
                         }
                     }
@@ -804,7 +772,7 @@ main {
 
                     &-text {
                         h1 {
-                            width: 80dvw;
+                            width: 90dvw;
                         }
                     }
                     &-button {

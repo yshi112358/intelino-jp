@@ -103,16 +103,24 @@ header .header-inner .global-nav ul li .vertical-line img {
 
 h1 {
   display: block;
-  white-space: nowrap;
   color: #ffd400;
-  font-size: 8dvh;
   font-weight: bold;
   margin-bottom: 3dvh;
+  font-size: 10dvh;
+}
+@media screen and (max-width: 100dvh) {
+  h1 {
+    font-size: 8dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  h1 {
+    font-size: 8dvw;
+  }
 }
 
 h3 {
   display: block;
-  white-space: nowrap;
   color: #ffffff;
   font-size: 4dvh;
   font-weight: bold;
@@ -121,12 +129,22 @@ h3 {
 
 p {
   display: block;
-  white-space: nowrap;
   color: #ffffff;
-  font-size: 3dvh;
   font-weight: regular;
   margin-left: 1dvw;
   margin-bottom: 2dvh;
+  text-wrap: wrap;
+  font-size: 3dvh;
+}
+@media screen and (max-width: 100dvh) {
+  p {
+    font-size: 3dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  p {
+    font-size: 4dvw;
+  }
 }
 
 main {
@@ -164,24 +182,19 @@ main .main-inner .top-inner {
   pointer-events: none;
   box-shadow: inset 2dvh 2dvh 2dvh rgba(0, 0, 0, 0.5), inset -2dvh -2dvh 2dvh rgba(0, 0, 0, 0.5);
 }
-main .main-inner .top-inner-text {
-  margin: 5dvh;
-  display: block;
-}
-main .main-inner .top-inner-text h1 {
-  display: block;
-  white-space: nowrap;
-  color: #ffd400;
-  font-weight: bold;
-  margin-bottom: 2dvh;
-}
-main .main-inner .top-inner-text p {
-  display: block;
-  white-space: nowrap;
-  color: #ffffff;
-  font-weight: regular;
-  margin-bottom: 1dvh;
-  text-shadow: 0.1dvh 0.1dvh 1dvh rgba(0, 0, 0, 0.5), -0.1dvh -0.1dvh 1dvh rgba(0, 0, 0, 0.5);
+@media screen {
+  main .main-inner .top-inner-text {
+    margin: 5dvh;
+    display: block;
+  }
+  main .main-inner .top-inner-text h1 {
+    display: block;
+    white-space: nowrap;
+  }
+  main .main-inner .top-inner-text p {
+    margin-bottom: 1dvh;
+    text-shadow: 0.1dvh 0.1dvh 1dvh rgba(0, 0, 0, 0.5), -0.1dvh -0.1dvh 1dvh rgba(0, 0, 0, 0.5);
+  }
 }
 @media screen and (max-width: 100dvh) {
   main .main-inner .top-inner {
@@ -191,26 +204,13 @@ main .main-inner .top-inner-text p {
     margin-top: 15dvh;
     background-repeat: no-repeat;
     background-color: #000000;
-    background-position: bottom 5dvh center;
     background-size: cover;
   }
   main .main-inner .top-inner-text {
     margin: 5dvh;
     display: block;
   }
-  main .main-inner .top-inner-text h1 {
-    display: block;
-    white-space: nowrap;
-    color: #ffd400;
-    font-weight: bold;
-    margin-bottom: 2dvh;
-    font-size: 8dvw;
-  }
   main .main-inner .top-inner-text p {
-    display: block;
-    white-space: wrap;
-    color: #ffffff;
-    font-weight: regular;
     margin-bottom: 1dvh;
     text-shadow: 0.1dvh 0.1dvh 1dvh rgba(0, 0, 0, 0.5), -0.1dvh -0.1dvh 1dvh rgba(0, 0, 0, 0.5);
   }
@@ -227,14 +227,10 @@ main .main-inner .top-inner-text p {
     margin: 2dvh;
   }
   main .main-inner .top-inner-text h1 {
-    font-size: 13dvw;
     margin-bottom: 0;
   }
   main .main-inner .top-inner-text-smartphone {
     margin-top: 1dvh;
-  }
-  main .main-inner .top-inner-text-smartphone p {
-    font-size: 4dvw;
   }
 }
 main .main-inner .top-inner-cover {
@@ -283,7 +279,6 @@ main .main-inner .about-inner-img {
   main .main-inner .about-inner-img {
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom 5dvh center;
   }
 }
 @media screen and (max-width: 70dvh) {
@@ -396,22 +391,6 @@ main .main-inner .learn-inner-text {
   left: 5dvh;
   z-index: 30;
 }
-main .main-inner .learn-inner-text h1 {
-  display: block;
-  white-space: nowrap;
-  color: #ffd400;
-  font-size: 10dvh;
-  font-weight: bold;
-  margin-bottom: 3dvh;
-}
-main .main-inner .learn-inner-text p {
-  display: block;
-  white-space: nowrap;
-  color: #ffffff;
-  font-size: 3dvh;
-  font-weight: regular;
-  margin-bottom: 2dvh;
-}
 main .main-inner .learn-inner2 {
   position: absolute;
   top: 100dvh;
@@ -501,11 +480,25 @@ main .main-inner .achievements .classroom-inner-classroom-col-container-row {
 main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
   position: relative;
   width: auto;
-  height: 30dvh;
   position: relative;
   z-index: 40;
   border-radius: 2dvh;
   padding: 1dvh;
+}
+@media screen {
+  main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
+    height: 25dvh;
+  }
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
+    height: 30dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
+    height: 40dvw;
+  }
 }
 main .main-inner .achievements .classroom-inner-classroom-col .right {
   justify-content: flex-end;
@@ -535,10 +528,11 @@ main .main-inner .achievements .awards-inner-text {
   margin-top: 10dvh;
   margin-bottom: 3dvh;
   width: 80dvw;
+  height: auto;
 }
 main .main-inner .achievements .awards-inner-awards {
   width: 80dvw;
-  height: 20dvh;
+  height: auto;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -551,11 +545,22 @@ main .main-inner .achievements .awards-inner-awards-row {
   justify-content: start;
   align-items: center;
   width: 100dvw;
+  height: auto;
 }
 main .main-inner .achievements .awards-inner-awards-row img {
-  width: 20dvh;
-  height: 20dvh;
+  width: 15dvh;
+  height: auto;
   margin: 2dvh;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .achievements .awards-inner-awards-row img {
+    width: 10dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .achievements .awards-inner-awards-row img {
+    width: 10dvw;
+  }
 }
 main .main-inner .purchase {
   width: 100dvw;
@@ -672,7 +677,7 @@ main .main-inner .contact-inner-col {
   z-index: 40;
 }
 main .main-inner .contact-inner-col-text h1 {
-  width: 80dvw;
+  width: 90dvw;
 }
 main .main-inner .contact-inner-col-button {
   width: 30dvh;
