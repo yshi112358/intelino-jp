@@ -497,7 +497,7 @@ main .main-inner .achievements .classroom-inner-classroom-col-container-row-img 
 }
 @media screen and (max-width: 70dvh) {
   main .main-inner .achievements .classroom-inner-classroom-col-container-row-img {
-    height: 40dvw;
+    height: 20dvh;
   }
 }
 main .main-inner .achievements .classroom-inner-classroom-col .right {

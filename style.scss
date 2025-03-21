@@ -558,7 +558,7 @@ main {
                                             height: 30dvh;
                                         }
                                         @media screen and (max-width: $max-width-smartphone) {
-                                            height: 40dvw;
+                                            height: 20dvh;
                                         }
                                         position: relative;
                                         z-index: 40;
