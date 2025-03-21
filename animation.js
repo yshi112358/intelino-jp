@@ -250,3 +250,41 @@ tl_purchase_end.to('.purchase-inner', {
     opacity: 0,
     y: -100,
 });
+
+var main_inner = document.querySelector('.main-inner');
+var top_scrollTop = 0;
+var learn_scrollTop = document.querySelector('.learn').getBoundingClientRect().top;
+var classroom_scrollTop = document.querySelector('.classroom').getBoundingClientRect().top;
+var purchase_scrollTop = document.querySelector('.purchase').getBoundingClientRect().top;
+
+
+const yellow = "#ffd400";
+const white = "#ffffff";
+function setPageIndicator(index) {
+    document.querySelectorAll('.page-indicator-inner-col-circle').forEach((item, item_index) => {
+        if (item_index == index) {
+            item.style.backgroundColor = yellow;
+            item.style.width = '1.5dvh';
+            item.style.height = '1.5dvh';
+        } else {
+            item.style.backgroundColor = white;
+            item.style.width = '1dvh';
+            item.style.height = '1dvh';
+        }
+    });
+}
+
+setPageIndicator(0);
+main_inner.addEventListener('scroll', function () {
+    let main_inner_scrollTop = main_inner.scrollTop;
+    if (main_inner_scrollTop < learn_scrollTop) {
+        setPageIndicator(0);
+    } else if (main_inner_scrollTop < classroom_scrollTop) {
+        setPageIndicator(1);
+    } else if (main_inner_scrollTop < purchase_scrollTop) {
+        setPageIndicator(2);
+    } else {
+        setPageIndicator(3);
+    }
+});
+

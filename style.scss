@@ -905,6 +905,40 @@ main {
             }
         }
     }
+
+    $page-indicator-width: 2dvh;
+    $page-indicator-height: 10dvh;
+    .page-indicator {
+        position: fixed;
+        z-index: 100;
+        bottom: 5dvh;
+        right: 4dvh;
+        width: $page-indicator-width;
+        height: $page-indicator-height;
+        display: flex;
+        &-inner {
+            width: $page-indicator-width;
+            height: $page-indicator-height;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &-col {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: $page-indicator-width;
+                height: $page-indicator-height;
+                flex-flow: column;
+                &-circle {
+                    width: 1dvh;
+                    height: 1dvh;
+                    border-radius: 50%;
+                    background-color: $white;
+                    margin: 0 1dvh;
+                }
+            }
+        }
+    }
 }
 
 footer {

@@ -761,6 +761,37 @@ main .main-inner .smartphone {
     display: block;
   }
 }
+main .page-indicator {
+  position: fixed;
+  z-index: 100;
+  bottom: 5dvh;
+  right: 4dvh;
+  width: 2dvh;
+  height: 10dvh;
+  display: flex;
+}
+main .page-indicator-inner {
+  width: 2dvh;
+  height: 10dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .page-indicator-inner-col {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 2dvh;
+  height: 10dvh;
+  flex-flow: column;
+}
+main .page-indicator-inner-col-circle {
+  width: 1dvh;
+  height: 1dvh;
+  border-radius: 50%;
+  background-color: #ffffff;
+  margin: 0 1dvh;
+}
 
 footer {
   position: relative;
