@@ -141,7 +141,7 @@ h2 {
     font-size: 8dvh;
 
     @media screen and (max-width: $max-width-tablet) {
-        font-size: 8dvh;
+        font-size: 6dvh;
     }
     @media screen and (max-width: $max-width-smartphone) {
         font-size: 8dvw;
@@ -658,30 +658,34 @@ main {
 
         .purchase {
             width: 100dvw;
-            height: 300dvh;
+            height: auto;
             background-color: $blue;
             position: relative;
             z-index: 30;
+            padding-top: 10dvh;
 
             &-inner {
-                position: relative;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                height: 120dvh+30dvh+150dvh;
-                padding-top: 20dvh;
-                width: 90dvw;
-                margin-left: 5dvw;
-                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                height: auto;
+                width: 100dvw;
+                margin-top: 5dvh;
+
+                &-background {
+                    background-color: $white;
+                    position: absolute;
+                    width: 90dvw;
+                    height: 80dvh;
+                    border-radius: 5dvh;
+                }
 
                 &-img {
-                    position: sticky;
-                    top: 0;
                     height: auto;
                     width: 45dvw;
-
+                    margin-left: 2dvw;
                     img {
-                        height: 100dvh;
+                        height: 70dvh;
                         width: auto;
                         /** マスクレイヤーにグラデーションを指定 */
                         mask-image: linear-gradient(
@@ -698,21 +702,21 @@ main {
                 }
 
                 &-col {
-                    position: sticky;
-                    top: 40dvh;
-                    margin-top: 70dvh;
-                    // margin-left: -200dvw;
-                    z-index: 40;
+                    position: relative;
+                    margin-top: 20dvh;
                     background-color: $blue;
                     padding: 1dvh 2dvh;
                     width: 45dvw;
                     height: auto;
+                    border-radius: 5dvh 0 0 0;
 
                     &-text {
                         position: relative;
                         width: auto;
                         height: auto;
-
+                        h2 {
+                            text-wrap: nowrap;
+                        }
                         p {
                             text-wrap: wrap;
                             width: 40dvw;
@@ -733,6 +737,114 @@ main {
                             height: 10dvh;
                             background-color: $white;
                             border-radius: 2dvh;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: $max-width-tablet) {
+                &-inner {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-flow: column;
+                    &-background {
+                        width: 85dvw;
+                        height: 70dvh;
+                        border-radius: 4dvh;
+                    }
+
+                    &-img {
+                        height: auto;
+                        width: auto;
+                        margin-top: 2dvh;
+
+                        img {
+                            height: auto;
+                            width: 60dvw;
+                        }
+                    }
+                    &-col {
+                        width: 85dvw;
+                        margin-top: -5dvh;
+                        margin-left: 15dvw;
+                        padding: 1dvh 2dvw;
+                        border-radius: 4dvh 0 0 0;
+                        &-text {
+                            h2 {
+                                text-wrap: nowrap;
+                            }
+                            p {
+                                text-wrap: wrap;
+                                width: 70dvw;
+                            }
+                        }
+                        &-button {
+                            width: auto;
+                            height: auto;
+                            padding-left: 1dvh;
+                            margin-bottom: 5dvh;
+                            img {
+                                object-fit: contain;
+                            }
+                            .mercari {
+                                width: 15dvh;
+                                height: 7dvh;
+                                background-color: $white;
+                                border-radius: 2dvh;
+                            }
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: $max-width-smartphone) {
+                &-inner {
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    flex-flow: column;
+
+                    &-background {
+                        width: 85dvw;
+                        height: 70dvh;
+                        border-radius: 4dvw;
+                    }
+                    &-img {
+                        height: 50dvh;
+                        width: auto;
+                        margin-top: 10dvw;
+                        img {
+                            height: 40dvh;
+                            width: auto;
+                        }
+                    }
+                    &-col {
+                        width: 85dvw;
+                        margin-top: -10dvh;
+                        margin-left: 15dvw;
+                        padding: 1dvh 2dvw;
+                        border-radius: 5dvw 0 0 0;
+                        &-text {
+                            h2 {
+                                text-wrap: nowrap;
+                            }
+                            p {
+                                text-wrap: wrap;
+                                width: 70dvw;
+                            }
+                        }
+                        &-button {
+                            width: auto;
+                            height: auto;
+                            padding-left: 1dvh;
+                            img {
+                                object-fit: contain;
+                            }
+                            .mercari {
+                                width: 25dvw;
+                                height: 10dvw;
+                                background-color: $white;
+                                border-radius: 2dvw;
+                            }
                         }
                     }
                 }

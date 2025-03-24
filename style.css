@@ -128,7 +128,7 @@ h2 {
 }
 @media screen and (max-width: 100dvh) {
   h2 {
-    font-size: 8dvh;
+    font-size: 6dvh;
   }
 }
 @media screen and (max-width: 70dvh) {
@@ -582,30 +582,34 @@ main .main-inner .achievements .awards-inner-awards-row img {
 }
 main .main-inner .purchase {
   width: 100dvw;
-  height: 300dvh;
+  height: auto;
   background-color: #00afd7;
   position: relative;
   z-index: 30;
+  padding-top: 10dvh;
 }
 main .main-inner .purchase-inner {
-  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: 300dvh;
-  padding-top: 20dvh;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100dvw;
+  margin-top: 5dvh;
+}
+main .main-inner .purchase-inner-background {
+  background-color: #ffffff;
+  position: absolute;
   width: 90dvw;
-  margin-left: 5dvw;
-  flex-wrap: nowrap;
+  height: 80dvh;
+  border-radius: 5dvh;
 }
 main .main-inner .purchase-inner-img {
-  position: sticky;
-  top: 0;
   height: auto;
   width: 45dvw;
+  margin-left: 2dvw;
 }
 main .main-inner .purchase-inner-img img {
-  height: 100dvh;
+  height: 70dvh;
   width: auto;
   /** マスクレイヤーにグラデーションを指定 */
   -webkit-mask-image: linear-gradient(to right, rgb(0, 0, 0) 90%, rgba(0, 0, 0, 0) 100%);
@@ -617,19 +621,21 @@ main .main-inner .purchase-inner-img img {
      object-fit: contain;
 }
 main .main-inner .purchase-inner-col {
-  position: sticky;
-  top: 40dvh;
-  margin-top: 70dvh;
-  z-index: 40;
+  position: relative;
+  margin-top: 20dvh;
   background-color: #00afd7;
   padding: 1dvh 2dvh;
   width: 45dvw;
   height: auto;
+  border-radius: 5dvh 0 0 0;
 }
 main .main-inner .purchase-inner-col-text {
   position: relative;
   width: auto;
   height: auto;
+}
+main .main-inner .purchase-inner-col-text h2 {
+  text-wrap: nowrap;
 }
 main .main-inner .purchase-inner-col-text p {
   text-wrap: wrap;
@@ -651,6 +657,109 @@ main .main-inner .purchase-inner-col-button .mercari {
   height: 10dvh;
   background-color: #ffffff;
   border-radius: 2dvh;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .purchase-inner {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-flow: column;
+  }
+  main .main-inner .purchase-inner-background {
+    width: 85dvw;
+    height: 70dvh;
+    border-radius: 4dvh;
+  }
+  main .main-inner .purchase-inner-img {
+    height: auto;
+    width: auto;
+    margin-top: 2dvh;
+  }
+  main .main-inner .purchase-inner-img img {
+    height: auto;
+    width: 60dvw;
+  }
+  main .main-inner .purchase-inner-col {
+    width: 85dvw;
+    margin-top: -5dvh;
+    margin-left: 15dvw;
+    padding: 1dvh 2dvw;
+    border-radius: 4dvh 0 0 0;
+  }
+  main .main-inner .purchase-inner-col-text h2 {
+    text-wrap: nowrap;
+  }
+  main .main-inner .purchase-inner-col-text p {
+    text-wrap: wrap;
+    width: 70dvw;
+  }
+  main .main-inner .purchase-inner-col-button {
+    width: auto;
+    height: auto;
+    padding-left: 1dvh;
+    margin-bottom: 5dvh;
+  }
+  main .main-inner .purchase-inner-col-button img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  main .main-inner .purchase-inner-col-button .mercari {
+    width: 15dvh;
+    height: 7dvh;
+    background-color: #ffffff;
+    border-radius: 2dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .purchase-inner {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-flow: column;
+  }
+  main .main-inner .purchase-inner-background {
+    width: 85dvw;
+    height: 70dvh;
+    border-radius: 4dvw;
+  }
+  main .main-inner .purchase-inner-img {
+    height: 50dvh;
+    width: auto;
+    margin-top: 10dvw;
+  }
+  main .main-inner .purchase-inner-img img {
+    height: 40dvh;
+    width: auto;
+  }
+  main .main-inner .purchase-inner-col {
+    width: 85dvw;
+    margin-top: -10dvh;
+    margin-left: 15dvw;
+    padding: 1dvh 2dvw;
+    border-radius: 5dvw 0 0 0;
+  }
+  main .main-inner .purchase-inner-col-text h2 {
+    text-wrap: nowrap;
+  }
+  main .main-inner .purchase-inner-col-text p {
+    text-wrap: wrap;
+    width: 70dvw;
+  }
+  main .main-inner .purchase-inner-col-button {
+    width: auto;
+    height: auto;
+    padding-left: 1dvh;
+  }
+  main .main-inner .purchase-inner-col-button img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  main .main-inner .purchase-inner-col-button .mercari {
+    width: 25dvw;
+    height: 10dvw;
+    background-color: #ffffff;
+    border-radius: 2dvw;
+  }
 }
 main .main-inner .contact {
   width: 100dvw;

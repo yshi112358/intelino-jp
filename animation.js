@@ -218,7 +218,7 @@ const tl_purchase_start = gsap.timeline({
     }
 });
 
-tl_purchase_start.fromTo('.purchase-inner-img',
+tl_purchase_start.fromTo('.purchase-inner',
     {
         autoAlpha: 0,
         y: 100,
