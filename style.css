@@ -119,6 +119,24 @@ h1 {
   }
 }
 
+h2 {
+  display: block;
+  color: #ffd400;
+  font-weight: bold;
+  margin-bottom: 3dvh;
+  font-size: 8dvh;
+}
+@media screen and (max-width: 100dvh) {
+  h2 {
+    font-size: 8dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  h2 {
+    font-size: 8dvw;
+  }
+}
+
 h3 {
   display: block;
   color: #ffffff;
