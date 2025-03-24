@@ -807,18 +807,32 @@ main .main-inner .contact-inner-col-text h1 {
   width: 90dvw;
 }
 main .main-inner .contact-inner-col-button {
-  width: 30dvh;
-  height: 10dvh;
+  width: auto;
+  height: auto;
   margin-top: 40dvh;
   background-color: #ffffff;
   border-radius: 2dvh;
+  width: 40dvh;
+  height: 10dvh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 100dvh) {
+  main .main-inner .contact-inner-col-button {
+    width: 25dvh;
+    height: 10dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .contact-inner-col-button {
+    width: 40dvw;
+    height: 15dvw;
+  }
+}
 main .main-inner .contact-inner-col-button a {
-  width: 20dvw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -828,12 +842,35 @@ main .main-inner .contact-inner-col-button a svg {
   height: 5dvh;
   margin-right: 1dvh;
 }
+@media screen and (max-width: 100dvh) {
+  main .main-inner .contact-inner-col-button a svg {
+    width: 4dvh;
+    height: 4dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .contact-inner-col-button a svg {
+    width: 5dvw;
+    height: 5dvw;
+  }
+}
 main .main-inner .contact-inner-col-button a .text {
   width: auto;
   height: auto;
   color: #000000;
   font-size: 3dvh;
-  font-weight: bold;
+  font-weight: regular;
+  text-wrap: nowrap;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .contact-inner-col-button a .text {
+    font-size: 3dvh;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .contact-inner-col-button a .text {
+    font-size: 4dvw;
+  }
 }
 main .main-inner .company {
   width: 100dvw;
