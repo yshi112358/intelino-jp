@@ -446,6 +446,18 @@ main {
                     left: 5dvh;
                     z-index: 30;
                 }
+                @media screen and (max-width: $max-width-tablet) {
+                    width: 80dvw;
+                    &-text {
+                        left: 0;
+                    }
+                }
+                @media screen and (max-width: $max-width-smartphone) {
+                    width: 90dvw;
+                    &-text {
+                        left: 0;
+                    }
+                }
             }
 
             &-inner2 {
@@ -853,39 +865,43 @@ main {
 
         .contact {
             width: 100dvw;
-            height: 300dvh;
+            height: auto;
             background-color: $blue;
 
             z-index: 30;
             position: relative;
 
             &-inner {
-                position: sticky;
+                position: relative;
                 top: 0;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
-                height: 100dvh;
+                height: auto;
                 width: 90dvw;
                 margin-left: 5dvw;
                 // padding-top: 30dvh;
 
                 &-img {
-                    width: 45dvw;
-                    height: 100dvh;
+                    width: auto;
+                    height: auto;
                     position: absolute;
-                    // top: 0;
                     right: 5dvh;
-                    bottom: 5dvh;
+                    bottom: 0;
                     display: flex;
                     justify-content: flex-end;
                     align-items: center;
 
                     img {
-                        height: 100dvh;
-                        width: 45dvw;
+                        height: 80dvh;
+                        width: 80dvh;
                         object-fit: contain;
                         object-position: 100% 90%;
+
+                        @media screen and (max-width: $max-width-tablet) {
+                            height: 70dvw;
+                            width: 70dvw;
+                        }
                     }
                 }
 
@@ -893,7 +909,7 @@ main {
                     padding: 1dvh 2dvh;
                     width: auto;
                     height: auto;
-                    margin-top: $header-height - 3dvh;
+                    margin-top: 10dvh;
                     z-index: 40;
 
                     &-text {
@@ -905,17 +921,20 @@ main {
                         width: auto;
                         height: auto;
                         margin-top: 40dvh;
+                        margin-bottom: 20dvh;
                         background-color: $white;
                         border-radius: 2dvh;
                         width: 40dvh;
                         height: 10dvh;
                         @media screen and (max-width: $max-width-tablet) {
-                            width: 25dvh;
+                            width: 30dvh;
                             height: 10dvh;
+                            margin-bottom: 10dvw;
                         }
                         @media screen and (max-width: $max-width-smartphone) {
                             width: 40dvw;
                             height: 15dvw;
+                            margin-bottom: 0;
                         }
                         display: flex;
                         justify-content: center;
@@ -945,7 +964,7 @@ main {
                                 height: auto;
                                 color: $black;
                                 font-size: 3dvh;
-                                font-weight: regular;
+                                font-weight: bold;
                                 text-wrap: nowrap;
                                 @media screen and (max-width: $max-width-tablet) {
                                     font-size: 3dvh;

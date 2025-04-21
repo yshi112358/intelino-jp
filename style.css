@@ -409,6 +409,22 @@ main .main-inner .learn-inner-text {
   left: 5dvh;
   z-index: 30;
 }
+@media screen and (max-width: 100dvh) {
+  main .main-inner .learn-inner {
+    width: 80dvw;
+  }
+  main .main-inner .learn-inner-text {
+    left: 0;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .learn-inner {
+    width: 90dvw;
+  }
+  main .main-inner .learn-inner-text {
+    left: 0;
+  }
+}
 main .main-inner .learn-inner2 {
   position: absolute;
   top: 100dvh;
@@ -763,44 +779,50 @@ main .main-inner .purchase-inner-col-button .mercari {
 }
 main .main-inner .contact {
   width: 100dvw;
-  height: 300dvh;
+  height: auto;
   background-color: #00afd7;
   z-index: 30;
   position: relative;
 }
 main .main-inner .contact-inner {
-  position: sticky;
+  position: relative;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 100dvh;
+  height: auto;
   width: 90dvw;
   margin-left: 5dvw;
 }
 main .main-inner .contact-inner-img {
-  width: 45dvw;
-  height: 100dvh;
+  width: auto;
+  height: auto;
   position: absolute;
   right: 5dvh;
-  bottom: 5dvh;
+  bottom: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 main .main-inner .contact-inner-img img {
-  height: 100dvh;
-  width: 45dvw;
+  height: 80dvh;
+  width: 80dvh;
   -o-object-fit: contain;
      object-fit: contain;
   -o-object-position: 100% 90%;
      object-position: 100% 90%;
 }
+@media screen and (max-width: 100dvh) {
+  main .main-inner .contact-inner-img img {
+    height: 70dvw;
+    width: 70dvw;
+  }
+}
 main .main-inner .contact-inner-col {
   padding: 1dvh 2dvh;
   width: auto;
   height: auto;
-  margin-top: 17dvh;
+  margin-top: 10dvh;
   z-index: 40;
 }
 main .main-inner .contact-inner-col-text h1 {
@@ -810,6 +832,7 @@ main .main-inner .contact-inner-col-button {
   width: auto;
   height: auto;
   margin-top: 40dvh;
+  margin-bottom: 20dvh;
   background-color: #ffffff;
   border-radius: 2dvh;
   width: 40dvh;
@@ -820,14 +843,16 @@ main .main-inner .contact-inner-col-button {
 }
 @media screen and (max-width: 100dvh) {
   main .main-inner .contact-inner-col-button {
-    width: 25dvh;
+    width: 30dvh;
     height: 10dvh;
+    margin-bottom: 10dvw;
   }
 }
 @media screen and (max-width: 70dvh) {
   main .main-inner .contact-inner-col-button {
     width: 40dvw;
     height: 15dvw;
+    margin-bottom: 0;
   }
 }
 main .main-inner .contact-inner-col-button a {
@@ -859,7 +884,7 @@ main .main-inner .contact-inner-col-button a .text {
   height: auto;
   color: #000000;
   font-size: 3dvh;
-  font-weight: regular;
+  font-weight: bold;
   text-wrap: nowrap;
 }
 @media screen and (max-width: 100dvh) {
