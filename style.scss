@@ -1090,9 +1090,63 @@ footer {
         height: auto;
         padding: 5dvh;
 
-        a {
-            img {
-                height: 10dvh;
+        &-logo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: auto;
+            flex-wrap: wrap;
+            a {
+                height: auto;
+                img {
+                    height: 10dvh;
+                }
+            }
+            @media screen and (max-width: $max-width-tablet) {
+                a {
+                    height: 8dvw;
+                    img {
+                        height: 8dvw;
+                    }
+                }
+            }
+            @media screen and (max-width: $max-width-smartphone) {
+                a {
+                    height: 10dvw;
+                    img {
+                        height: 10dvw;
+                    }
+                }
+            }
+
+            &-social {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    margin: 1dvh;
+                    img {
+                        height: 10dvh;
+                    }
+                }
+                @media screen and (max-width: $max-width-tablet) {
+                    a {
+                        margin: 1dvh;
+                        img {
+                            height: 8dvw;
+                        }
+                    }
+                }
+                @media screen and (max-width: $max-width-smartphone) {
+                    a {
+                        margin: 1dvh;
+                        img {
+                            height: 10dvw;
+                        }
+                    }
+                }
             }
         }
 
