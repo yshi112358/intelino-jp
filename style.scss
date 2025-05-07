@@ -188,12 +188,12 @@ main {
         .top {
             width: 100dvw;
             height: 100dvh;
-            background-color: $blue;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             position: relative;
             scroll-snap-align: end;
+            background-color: $blue;
 
             &-inner {
                 background-image: url("./img/intelino-video.webp");
@@ -204,11 +204,11 @@ main {
                 border-radius: 5dvh;
                 margin-top: $header-height;
                 position: fixed;
-                z-index: 10;
                 pointer-events: none;
                 box-shadow: inset 2dvh 2dvh 2dvh
                         rgba($color: #000000, $alpha: 0.5),
                     inset -2dvh -2dvh 2dvh rgba($color: #000000, $alpha: 0.5);
+                z-index: 20;
 
                 //Laptop
                 @media screen {
@@ -282,6 +282,160 @@ main {
                     opacity: 0;
                 }
             }
+
+            @media screen and (min-width: $max-width-tablet) {
+                &-scroll {
+                    position: fixed;
+                    width: 10dvw;
+                    height: 20dvh;
+                    left: 0;
+                    bottom: 0;
+
+                    &-text {
+                        position: fixed;
+                        height: auto;
+                        width: 8dvh;
+                        left: 3dvw;
+                        bottom: 3dvw;
+                    }
+                    &-arrow {
+                        position: fixed;
+                        height: 15dvh;
+                        width: 10dvw;
+                        display: flex;
+                        bottom: 1dvw;
+                        left: 3dvw;
+                        justify-content: flex-start;
+                        align-items: flex-start;
+                        flex-flow: column;
+
+                        &-1 {
+                            position: absolute;
+                            top: 0;
+                            opacity: 0.5;
+                            animation: zig 0.5s ease 0s infinite alternate none
+                                running;
+                        }
+                        &-2 {
+                            position: absolute;
+                            top: 0dvh;
+                        }
+                        img {
+                            width: 2.5dvh;
+                        }
+                    }
+                    @keyframes zig {
+                        0% {
+                            top: 0;
+                        }
+
+                        100% {
+                            top: -3dvh;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: $max-width-tablet) {
+                &-scroll {
+                    position: fixed;
+                    width: 100dvw;
+                    height: 20dvh;
+                    bottom: 0;
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+
+                    &-text {
+                        height: auto;
+                        width: 8dvh;
+                    }
+                    &-arrow {
+                        position: relative;
+                        height: 15dvh;
+                        width: 30dvw;
+                        display: flex;
+                        top: 2dvh;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-flow: column;
+
+                        &-1 {
+                            position: absolute;
+                            top: 0;
+                            opacity: 0.5;
+                            animation: zig 0.5s ease 0s infinite alternate none
+                                running;
+                        }
+                        &-2 {
+                            position: absolute;
+                            top: 0dvh;
+                        }
+                        img {
+                            width: 2.5dvh;
+                        }
+                    }
+                    @keyframes zig {
+                        0% {
+                            top: 0;
+                        }
+
+                        100% {
+                            top: -3dvh;
+                        }
+                    }
+                }
+            }
+            @media screen and (max-width: $max-width-smartphone) {
+                &-scroll {
+                    position: fixed;
+                    width: 100dvw;
+                    height: 15dvh;
+                    bottom: 0;
+                    display: flex;
+                    flex-flow: column;
+                    align-items: center;
+
+                    &-text {
+                        height: auto;
+                        width: 7dvh;
+                    }
+                    &-arrow {
+                        position: relative;
+                        height: 15dvh;
+                        width: 30dvw;
+                        display: flex;
+                        top: 2dvh;
+                        justify-content: flex-start;
+                        align-items: center;
+                        flex-flow: column;
+
+                        &-1 {
+                            position: absolute;
+                            top: 0;
+                            opacity: 0.5;
+                            animation: zig 0.5s ease 0s infinite alternate none
+                                running;
+                        }
+                        &-2 {
+                            position: absolute;
+                            top: 0dvh;
+                        }
+                        img {
+                            width: 2dvh;
+                        }
+                    }
+                    @keyframes zig {
+                        0% {
+                            top: 0;
+                        }
+
+                        100% {
+                            top: -3dvh;
+                        }
+                    }
+                }
+            }
         }
 
         .about {
@@ -289,7 +443,7 @@ main {
             width: 100dvw;
             height: 300dvh;
             scroll-snap-align: end;
-            background-color: $blue;
+            z-index: 30;
 
             &-inner {
                 position: inherit;
@@ -302,7 +456,6 @@ main {
                 &-text {
                     position: sticky;
                     top: 5dvh + $header-height;
-                    z-index: 30;
                     width: 100dvw;
                     left: 0;
                     display: flex;
@@ -867,7 +1020,6 @@ main {
             width: 100dvw;
             height: auto;
             background-color: $blue;
-
             z-index: 30;
             position: relative;
 
@@ -984,6 +1136,7 @@ main {
             height: auto;
             background-color: $blue;
             z-index: 30;
+            position: relative;
 
             &-inner {
                 width: 100dvw;

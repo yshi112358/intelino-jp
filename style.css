@@ -180,12 +180,12 @@ main .main-inner {
 main .main-inner .top {
   width: 100dvw;
   height: 100dvh;
-  background-color: #00afd7;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   position: relative;
   scroll-snap-align: end;
+  background-color: #00afd7;
 }
 main .main-inner .top-inner {
   background-image: url("./img/intelino-video.webp");
@@ -196,9 +196,9 @@ main .main-inner .top-inner {
   border-radius: 5dvh;
   margin-top: 20dvh;
   position: fixed;
-  z-index: 10;
   pointer-events: none;
   box-shadow: inset 2dvh 2dvh 2dvh rgba(0, 0, 0, 0.5), inset -2dvh -2dvh 2dvh rgba(0, 0, 0, 0.5);
+  z-index: 20;
 }
 @media screen {
   main .main-inner .top-inner-text {
@@ -260,12 +260,152 @@ main .main-inner .top-inner-cover {
   top: 0;
   opacity: 0;
 }
+@media screen and (min-width: 100dvh) {
+  main .main-inner .top-scroll {
+    position: fixed;
+    width: 10dvw;
+    height: 20dvh;
+    left: 0;
+    bottom: 0;
+  }
+  main .main-inner .top-scroll-text {
+    position: fixed;
+    height: auto;
+    width: 8dvh;
+    left: 3dvw;
+    bottom: 3dvw;
+  }
+  main .main-inner .top-scroll-arrow {
+    position: fixed;
+    height: 15dvh;
+    width: 10dvw;
+    display: flex;
+    bottom: 1dvw;
+    left: 3dvw;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-flow: column;
+  }
+  main .main-inner .top-scroll-arrow-1 {
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+    animation: zig 0.5s ease 0s infinite alternate none running;
+  }
+  main .main-inner .top-scroll-arrow-2 {
+    position: absolute;
+    top: 0dvh;
+  }
+  main .main-inner .top-scroll-arrow img {
+    width: 2.5dvh;
+  }
+  @keyframes zig {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -3dvh;
+    }
+  }
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .top-scroll {
+    position: fixed;
+    width: 100dvw;
+    height: 20dvh;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  main .main-inner .top-scroll-text {
+    height: auto;
+    width: 8dvh;
+  }
+  main .main-inner .top-scroll-arrow {
+    position: relative;
+    height: 15dvh;
+    width: 30dvw;
+    display: flex;
+    top: 2dvh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+  }
+  main .main-inner .top-scroll-arrow-1 {
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+    animation: zig 0.5s ease 0s infinite alternate none running;
+  }
+  main .main-inner .top-scroll-arrow-2 {
+    position: absolute;
+    top: 0dvh;
+  }
+  main .main-inner .top-scroll-arrow img {
+    width: 2.5dvh;
+  }
+  @keyframes zig {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -3dvh;
+    }
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .top-scroll {
+    position: fixed;
+    width: 100dvw;
+    height: 15dvh;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+  main .main-inner .top-scroll-text {
+    height: auto;
+    width: 7dvh;
+  }
+  main .main-inner .top-scroll-arrow {
+    position: relative;
+    height: 15dvh;
+    width: 30dvw;
+    display: flex;
+    top: 2dvh;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column;
+  }
+  main .main-inner .top-scroll-arrow-1 {
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+    animation: zig 0.5s ease 0s infinite alternate none running;
+  }
+  main .main-inner .top-scroll-arrow-2 {
+    position: absolute;
+    top: 0dvh;
+  }
+  main .main-inner .top-scroll-arrow img {
+    width: 2dvh;
+  }
+  @keyframes zig {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -3dvh;
+    }
+  }
+}
 main .main-inner .about {
   position: relative;
   width: 100dvw;
   height: 300dvh;
   scroll-snap-align: end;
-  background-color: #00afd7;
+  z-index: 30;
 }
 main .main-inner .about-inner {
   position: inherit;
@@ -275,7 +415,6 @@ main .main-inner .about-inner {
 main .main-inner .about-inner-text {
   position: sticky;
   top: 25dvh;
-  z-index: 30;
   width: 100dvw;
   left: 0;
   display: flex;
@@ -902,6 +1041,7 @@ main .main-inner .company {
   height: auto;
   background-color: #00afd7;
   z-index: 30;
+  position: relative;
 }
 main .main-inner .company-inner {
   width: 100dvw;
