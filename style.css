@@ -110,7 +110,7 @@ h1 {
 }
 @media screen and (max-width: 100dvh) {
   h1 {
-    font-size: 8dvh;
+    font-size: 7dvh;
   }
 }
 @media screen and (max-width: 70dvh) {
@@ -222,7 +222,7 @@ main .main-inner .top-inner {
     margin-top: 15dvh;
     background-repeat: no-repeat;
     background-color: #000000;
-    background-size: cover;
+    background-size: 140%;
   }
   main .main-inner .top-inner-text {
     margin: 5dvh;
@@ -434,7 +434,7 @@ main .main-inner .about-inner-img {
 }
 @media screen and (max-width: 100dvh) {
   main .main-inner .about-inner-img {
-    background-size: cover;
+    background-size: 140%;
     background-repeat: no-repeat;
   }
 }
