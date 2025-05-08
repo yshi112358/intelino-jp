@@ -439,6 +439,7 @@ main .main-inner .top-inner-cover {
     height: 20dvh;
     left: 0;
     bottom: 0;
+    pointer-events: none;
   }
   main .main-inner .top-scroll-text {
     position: fixed;
@@ -489,6 +490,7 @@ main .main-inner .top-inner-cover {
     display: flex;
     flex-flow: column;
     align-items: center;
+    pointer-events: none;
   }
   main .main-inner .top-scroll-text {
     height: auto;
@@ -535,6 +537,7 @@ main .main-inner .top-inner-cover {
     display: flex;
     flex-flow: column;
     align-items: center;
+    pointer-events: none;
   }
   main .main-inner .top-scroll-text {
     height: auto;

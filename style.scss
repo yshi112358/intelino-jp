@@ -507,6 +507,7 @@ main {
                     height: 20dvh;
                     left: 0;
                     bottom: 0;
+                    pointer-events: none;
 
                     &-text {
                         position: fixed;
@@ -565,6 +566,7 @@ main {
                     display: flex;
                     flex-flow: column;
                     align-items: center;
+                    pointer-events: none;
 
                     &-text {
                         height: auto;
@@ -619,6 +621,7 @@ main {
                     display: flex;
                     flex-flow: column;
                     align-items: center;
+                    pointer-events: none;
 
                     &-text {
                         height: auto;
