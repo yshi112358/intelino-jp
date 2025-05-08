@@ -6,6 +6,9 @@ $gray: #b2aeae;
 $white: #ffffff;
 $header-height: 20dvh;
 
+$max-width-tablet: 100dvh;
+$max-width-smartphone: 70dvh;
+
 body {
     margin: 0;
     padding: 0;
@@ -25,17 +28,14 @@ header {
 
     .header-inner {
         margin: 10px;
-
         background-color: $blue;
         color: $white;
-        border-radius: 2dvh;
-        // width: 85dvh;
-        // height: 15dvh;
         width: 90dvw;
         height: 10dvh;
         display: flex;
         justify-content: space-between; //左右中央寄せ（要素が2つしかないためそれぞれが端に寄っている）
         align-items: center;
+        border-radius: 2dvh;
 
         .logo {
             height: 10dvh;
@@ -96,29 +96,243 @@ header {
                 }
             }
         }
+
+        .hamburger {
+            display: none;
+            position: relative;
+            width: 10dvw;
+            height: 10dvw;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3dvw;
+            cursor: pointer;
+
+            span {
+                position: relative;
+                width: 6dvw;
+                height: 0.7dvw;
+                border-radius: 1dvw;
+                margin: 0.7dvw;
+                background-color: $white;
+                transition: all 0.3s ease;
+            }
+        }
     }
-    @media screen and (max-width: 100dvh) {
+
+    @media screen and (max-width: $max-width-tablet) {
         height: 15dvh;
+
         .header-inner {
             height: 10dvh;
-        }
-        .global-nav {
-            display: none;
+
+            .global-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                position: relative;
+                width: 10dvw;
+                height: 10dvw;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                margin-right: 3dvw;
+
+                span {
+                    position: relative;
+                    width: 6dvw;
+                    height: 0.7dvw;
+                    border-radius: 1dvw;
+                    margin: 0.7dvw;
+                    background-color: $white;
+                }
+
+                &.active {
+                    span {
+                        &:nth-of-type(1) {
+                            transform: translateY(2.1dvw) rotate(45deg);
+                        }
+
+                        &:nth-of-type(2) {
+                            opacity: 0;
+                        }
+
+                        &:nth-of-type(3) {
+                            transform: translateY(-2.1dvw) rotate(-45deg);
+                        }
+                    }
+                }
+            }
         }
     }
-    @media screen and (max-width: 70dvh) {
+
+    @media screen and (max-width: $max-width-smartphone) {
         height: 13dvh;
+
         .header-inner {
             height: 10dvh;
-        }
-        .global-nav {
-            display: none;
+
+            .logo {
+                margin: 0 5dvw;
+
+                img {
+                    height: 8dvw;
+                }
+            }
+
+            .global-nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+                position: relative;
+                width: 10dvw;
+                height: 10dvw;
+                flex-flow: column;
+                justify-content: center;
+                align-items: center;
+                margin-right: 3dvw;
+
+                span {
+                    position: relative;
+                    width: 8dvw;
+                    height: 1dvw;
+                    border-radius: 1dvw;
+                    margin: 1dvw;
+                    background-color: $white;
+                }
+
+                &.active {
+                    span {
+                        &:nth-of-type(1) {
+                            transform: translateY(3dvw) rotate(45deg);
+                        }
+
+                        &:nth-of-type(2) {
+                            opacity: 0;
+                        }
+
+                        &:nth-of-type(3) {
+                            transform: translateY(-3dvw) rotate(-45deg);
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-$max-width-tablet: 100dvh;
-$max-width-smartphone: 70dvh;
+.overlay {
+    position: fixed;
+    z-index: 100;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: $yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .close-btn {
+        position: fixed;
+        top: 3dvh;
+        right: 5dvh;
+        width: 15dvw;
+        height: 15dvw;
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+
+        span {
+            position: absolute;
+            width: 8dvw;
+            height: 1dvw;
+            background-color: $blue;
+            border-radius: 1dvw;
+            transition: all 0.3s ease;
+
+            &:nth-of-type(1) {
+                transform: rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:hover {
+            span {
+                background-color: darken($blue, 10%);
+            }
+        }
+
+        @media screen and (max-width: $max-width-smartphone) {
+            width: 20dvw;
+            height: 20dvw;
+            top: 3dvw;
+            right: 3dvw;
+
+            span {
+                width: 12dvw;
+                height: 1.5dvw;
+            }
+        }
+    }
+
+    .overlay-menu {
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin: 3dvh 0;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(2dvh);
+                transition: all 0.3s ease;
+
+                &.active {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                a {
+                    color: $blue;
+                    text-decoration: none;
+                    font-size: 5dvh;
+                    font-weight: bold;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        width: 1.5em;
+                        height: 1.5em;
+                        margin: 0 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}
+
 h1 {
     display: block;
     color: $yellow;
@@ -129,10 +343,12 @@ h1 {
     @media screen and (max-width: $max-width-tablet) {
         font-size: 7dvh;
     }
+
     @media screen and (max-width: $max-width-smartphone) {
         font-size: 8dvw;
     }
 }
+
 h2 {
     display: block;
     color: $yellow;
@@ -143,6 +359,7 @@ h2 {
     @media screen and (max-width: $max-width-tablet) {
         font-size: 6dvh;
     }
+
     @media screen and (max-width: $max-width-smartphone) {
         font-size: 8dvw;
     }
@@ -168,6 +385,7 @@ p {
     @media screen and (max-width: $max-width-tablet) {
         font-size: 3dvh;
     }
+
     @media screen and (max-width: $max-width-smartphone) {
         font-size: 4dvw;
     }
@@ -205,8 +423,7 @@ main {
                 margin-top: $header-height;
                 position: fixed;
                 pointer-events: none;
-                box-shadow: inset 2dvh 2dvh 2dvh
-                        rgba($color: #000000, $alpha: 0.5),
+                box-shadow: inset 2dvh 2dvh 2dvh rgba($color: #000000, $alpha: 0.5),
                     inset -2dvh -2dvh 2dvh rgba($color: #000000, $alpha: 0.5);
                 z-index: 20;
 
@@ -223,10 +440,8 @@ main {
 
                         p {
                             margin-bottom: 1dvh;
-                            text-shadow: 0.1dvh 0.1dvh 1dvh
-                                    rgba($color: #000000, $alpha: 0.5),
-                                -0.1dvh -0.1dvh 1dvh
-                                    rgba($color: #000000, $alpha: 0.5);
+                            text-shadow: 0.1dvh 0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5),
+                                -0.1dvh -0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5);
                         }
                     }
                 }
@@ -240,16 +455,15 @@ main {
                     background-repeat: no-repeat;
                     background-color: $black;
                     background-size: 140%;
+
                     &-text {
                         margin: 5dvh;
                         display: block;
 
                         p {
                             margin-bottom: 1dvh;
-                            text-shadow: 0.1dvh 0.1dvh 1dvh
-                                    rgba($color: #000000, $alpha: 0.5),
-                                -0.1dvh -0.1dvh 1dvh
-                                    rgba($color: #000000, $alpha: 0.5);
+                            text-shadow: 0.1dvh 0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5),
+                                -0.1dvh -0.1dvh 1dvh rgba($color: #000000, $alpha: 0.5);
                         }
                     }
                 }
@@ -261,11 +475,14 @@ main {
                     border-radius: 5dvw;
                     background-size: 170%;
                     margin-top: 13dvh;
+
                     &-text {
                         margin: 2dvh;
+
                         h1 {
                             margin-bottom: 0;
                         }
+
                         &-smartphone {
                             margin-top: 1dvh;
                         }
@@ -298,6 +515,7 @@ main {
                         left: 3dvw;
                         bottom: 3dvw;
                     }
+
                     &-arrow {
                         position: fixed;
                         height: 15dvh;
@@ -313,17 +531,19 @@ main {
                             position: absolute;
                             top: 0;
                             opacity: 0.5;
-                            animation: zig 0.5s ease 0s infinite alternate none
-                                running;
+                            animation: zig 0.5s ease 0s infinite alternate none running;
                         }
+
                         &-2 {
                             position: absolute;
                             top: 0dvh;
                         }
+
                         img {
                             width: 2.5dvh;
                         }
                     }
+
                     @keyframes zig {
                         0% {
                             top: 0;
@@ -350,6 +570,7 @@ main {
                         height: auto;
                         width: 8dvh;
                     }
+
                     &-arrow {
                         position: relative;
                         height: 15dvh;
@@ -364,17 +585,19 @@ main {
                             position: absolute;
                             top: 0;
                             opacity: 0.5;
-                            animation: zig 0.5s ease 0s infinite alternate none
-                                running;
+                            animation: zig 0.5s ease 0s infinite alternate none running;
                         }
+
                         &-2 {
                             position: absolute;
                             top: 0dvh;
                         }
+
                         img {
                             width: 2.5dvh;
                         }
                     }
+
                     @keyframes zig {
                         0% {
                             top: 0;
@@ -386,6 +609,7 @@ main {
                     }
                 }
             }
+
             @media screen and (max-width: $max-width-smartphone) {
                 &-scroll {
                     position: fixed;
@@ -400,6 +624,7 @@ main {
                         height: auto;
                         width: 7dvh;
                     }
+
                     &-arrow {
                         position: relative;
                         height: 15dvh;
@@ -414,17 +639,19 @@ main {
                             position: absolute;
                             top: 0;
                             opacity: 0.5;
-                            animation: zig 0.5s ease 0s infinite alternate none
-                                running;
+                            animation: zig 0.5s ease 0s infinite alternate none running;
                         }
+
                         &-2 {
                             position: absolute;
                             top: 0dvh;
                         }
+
                         img {
                             width: 2dvh;
                         }
                     }
+
                     @keyframes zig {
                         0% {
                             top: 0;
@@ -478,6 +705,7 @@ main {
                         background-size: 140%;
                         background-repeat: no-repeat;
                     }
+
                     @media screen and (max-width: $max-width-smartphone) {
                         background-size: 170%;
                     }
@@ -599,14 +827,18 @@ main {
                     left: 5dvh;
                     z-index: 30;
                 }
+
                 @media screen and (max-width: $max-width-tablet) {
                     width: 80dvw;
+
                     &-text {
                         left: 0;
                     }
                 }
+
                 @media screen and (max-width: $max-width-smartphone) {
                     width: 90dvw;
+
                     &-text {
                         left: 0;
                     }
@@ -624,7 +856,8 @@ main {
         }
 
         $award_width: 96dvw;
-        $award_inner_posion: (100dvw - $award_width)/2;
+        $award_inner_posion: (
+            100dvw - $award_width)/2;
 
         $achievement_margin: 2dvw;
         $achievement_width: 100dvw;
@@ -688,545 +921,587 @@ main {
                         justify-content: center;
                         position: relative; //これ重要
                         /** マスクレイヤーにグラデーションを指定 */
-                        mask-image: linear-gradient(
-                                to right,
+                        mask-image: linear-gradient(to right,
+                                rgb(0 0 0 / 100%) 95%,
+                                rgb(0 0 0 / 0%) 100%),
+                            linear-gradient(to left,
                                 rgb(0 0 0 / 100%) 95%,
                                 rgb(0 0 0 / 0%) 100%
-                            ),
-                            linear-gradient(
-                                to left,
-                                rgb(0 0 0 / 100%) 95%,
-                                rgb(0 0 0 / 0%) 100%
-                            );
+                        );
 
-                        /** マスクの合成モードを設定 */
-                        mask-composite: intersect;
+                    /** マスクの合成モードを設定 */
+                    mask-composite: intersect;
 
-                        &-col {
+                    &-col {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 100dvw;
+                        height: auto;
+                        flex-flow: column;
+                        overflow: hidden;
+
+                        &-container {
                             display: flex;
-                            justify-content: center;
-                            align-items: center;
                             width: 100dvw;
                             height: auto;
-                            flex-flow: column;
-                            overflow: hidden;
+                            flex-flow: row;
+                            flex-wrap: nowrap;
 
-                            &-container {
+                            &-row {
                                 display: flex;
-                                width: 100dvw;
+                                justify-content: center;
+                                align-items: center;
+                                width: auto;
                                 height: auto;
                                 flex-flow: row;
-                                flex-wrap: nowrap;
 
-                                &-row {
-                                    display: flex;
-                                    justify-content: center;
-                                    align-items: center;
+                                &-img {
+                                    position: relative;
                                     width: auto;
-                                    height: auto;
-                                    flex-flow: row;
 
-                                    &-img {
-                                        position: relative;
-                                        width: auto;
-
-                                        @media screen {
-                                            height: 25dvh;
-                                        }
-                                        @media screen and (max-width: $max-width-tablet) {
-                                            height: 30dvh;
-                                        }
-                                        @media screen and (max-width: $max-width-smartphone) {
-                                            height: 20dvh;
-                                        }
-                                        position: relative;
-                                        z-index: 40;
-                                        border-radius: 2dvh;
-                                        padding: 1dvh;
+                                    @media screen {
+                                        height: 25dvh;
                                     }
+
+                                    @media screen and (max-width: $max-width-tablet) {
+                                        height: 30dvh;
+                                    }
+
+                                    @media screen and (max-width: $max-width-smartphone) {
+                                        height: 20dvh;
+                                    }
+
+                                    position: relative;
+                                    z-index: 40;
+                                    border-radius: 2dvh;
+                                    padding: 1dvh;
                                 }
-                            }
-
-                            .right {
-                                justify-content: flex-end;
-                            }
-
-                            .left {
-                                justify-content: flex-start;
                             }
                         }
-                    }
-                }
-            }
 
-            .awards {
-                height: auto;
-                width: 100dvw;
-                position: relative;
+                        .right {
+                            justify-content: flex-end;
+                        }
 
-                &-inner {
-                    top: 2dvw;
-                    margin: 0 2dvw 2dvw 2dvw;
-                    border-radius: 0 0 5dvh 5dvh;
-                    width: $achievement_inner_width;
-                    background-color: $blue;
-                    height: auto;
-
-                    // flex設定
-                    display: flex;
-                    flex-flow: column;
-                    align-items: center;
-                    justify-content: flex-start;
-
-                    &-text {
-                        position: relative;
-                        margin-top: $header-height - 10dvh;
-                        margin-bottom: 3dvh;
-                        width: 80dvw;
-                        height: auto;
-                    }
-
-                    &-awards {
-                        width: 80dvw;
-                        height: auto;
-                        display: flex;
-                        justify-content: start;
-                        align-items: center;
-                        position: relative;
-                        flex-flow: row;
-                        margin-bottom: 10dvh;
-
-                        &-row {
-                            display: flex;
-                            justify-content: start;
-                            align-items: center;
-                            width: 100dvw;
-                            height: auto;
-
-                            img {
-                                width: 15dvh;
-                                height: auto;
-                                margin: 2dvh;
-
-                                @media screen and (max-width: $max-width-tablet) {
-                                    width: 10dvh;
-                                }
-                                @media screen and (max-width: $max-width-smartphone) {
-                                    width: 10dvw;
-                                }
-                            }
+                        .left {
+                            justify-content: flex-start;
                         }
                     }
                 }
             }
         }
 
-        .purchase {
-            width: 100dvw;
+        .awards {
             height: auto;
-            background-color: $blue;
+            width: 100dvw;
             position: relative;
-            z-index: 30;
-            padding-top: 10dvh;
 
             &-inner {
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                top: 2dvw;
+                margin: 0 2dvw 2dvw 2dvw;
+                border-radius: 0 0 5dvh 5dvh;
+                width: $achievement_inner_width;
+                background-color: $blue;
                 height: auto;
-                width: 100dvw;
-                margin-top: 5dvh;
+
+                // flex設定
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+                justify-content: flex-start;
+
+                &-text {
+                    position: relative;
+                    margin-top: $header-height - 10dvh;
+                    margin-bottom: 3dvh;
+                    width: 80dvw;
+                    height: auto;
+                }
+
+                &-awards {
+                    width: 80dvw;
+                    height: auto;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+                    position: relative;
+                    flex-flow: row;
+                    margin-bottom: 10dvh;
+
+                    &-row {
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        width: 100dvw;
+                        height: auto;
+
+                        img {
+                            width: 15dvh;
+                            height: auto;
+                            margin: 2dvh;
+
+                            @media screen and (max-width: $max-width-tablet) {
+                                width: 10dvh;
+                            }
+
+                            @media screen and (max-width: $max-width-smartphone) {
+                                width: 10dvw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .purchase {
+        width: 100dvw;
+        height: auto;
+        background-color: $blue;
+        position: relative;
+        z-index: 30;
+        padding-top: 10dvh;
+
+        &-inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100dvw;
+            margin-top: 5dvh;
+
+            &-background {
+                background-color: $white;
+                position: absolute;
+                width: 90dvw;
+                height: 80dvh;
+                border-radius: 5dvh;
+            }
+
+            &-img {
+                height: auto;
+                width: 45dvw;
+                margin-left: 2dvw;
+
+                img {
+                    height: 70dvh;
+                    width: auto;
+                    /** マスクレイヤーにグラデーションを指定 */
+                    mask-image: linear-gradient(to right,
+                            rgb(0 0 0 / 100%) 90%,
+                            rgb(0 0 0 / 0%) 100%);
+
+                    /** マスクの合成モードを設定 */
+                    mask-composite: intersect;
+
+                    object-fit: contain;
+                }
+            }
+
+            &-col {
+                position: relative;
+                margin-top: 20dvh;
+                background-color: $blue;
+                padding: 1dvh 2dvh;
+                width: 45dvw;
+                height: auto;
+                border-radius: 5dvh 0 0 0;
+
+                &-text {
+                    position: relative;
+                    width: auto;
+                    height: auto;
+
+                    h2 {
+                        text-wrap: nowrap;
+                    }
+
+                    p {
+                        text-wrap: wrap;
+                        width: 40dvw;
+                    }
+                }
+
+                &-button {
+                    position: relative;
+                    width: auto;
+                    height: auto;
+                    padding-left: 1dvh;
+                    margin-bottom: 5dvh;
+
+                    img {
+                        object-fit: contain;
+                    }
+
+                    .mercari {
+                        width: 20dvh;
+                        height: 10dvh;
+                        background-color: $white;
+                        border-radius: 2dvh;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width: $max-width-tablet) {
+            &-inner {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-flow: column;
 
                 &-background {
-                    background-color: $white;
-                    position: absolute;
-                    width: 90dvw;
-                    height: 80dvh;
-                    border-radius: 5dvh;
+                    width: 85dvw;
+                    height: 70dvh;
+                    border-radius: 4dvh;
                 }
 
                 &-img {
                     height: auto;
-                    width: 45dvw;
-                    margin-left: 2dvw;
+                    width: auto;
+                    margin-top: 2dvh;
+
                     img {
-                        height: 70dvh;
-                        width: auto;
-                        /** マスクレイヤーにグラデーションを指定 */
-                        mask-image: linear-gradient(
-                            to right,
-                            rgb(0 0 0 / 100%) 90%,
-                            rgb(0 0 0 / 0%) 100%
-                        );
-
-                        /** マスクの合成モードを設定 */
-                        mask-composite: intersect;
-
-                        object-fit: contain;
+                        height: auto;
+                        width: 60dvw;
                     }
                 }
 
                 &-col {
-                    position: relative;
-                    margin-top: 20dvh;
-                    background-color: $blue;
-                    padding: 1dvh 2dvh;
-                    width: 45dvw;
-                    height: auto;
-                    border-radius: 5dvh 0 0 0;
+                    width: 85dvw;
+                    margin-top: -5dvh;
+                    margin-left: 15dvw;
+                    padding: 1dvh 2dvw;
+                    border-radius: 4dvh 0 0 0;
 
                     &-text {
-                        position: relative;
-                        width: auto;
-                        height: auto;
                         h2 {
                             text-wrap: nowrap;
                         }
+
                         p {
                             text-wrap: wrap;
-                            width: 40dvw;
+                            width: 70dvw;
                         }
                     }
 
                     &-button {
-                        position: relative;
                         width: auto;
                         height: auto;
                         padding-left: 1dvh;
                         margin-bottom: 5dvh;
+
                         img {
                             object-fit: contain;
                         }
+
                         .mercari {
-                            width: 20dvh;
-                            height: 10dvh;
+                            width: 15dvh;
+                            height: 7dvh;
                             background-color: $white;
                             border-radius: 2dvh;
                         }
                     }
                 }
             }
-            @media screen and (max-width: $max-width-tablet) {
-                &-inner {
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    flex-flow: column;
-                    &-background {
-                        width: 85dvw;
-                        height: 70dvh;
-                        border-radius: 4dvh;
-                    }
-
-                    &-img {
-                        height: auto;
-                        width: auto;
-                        margin-top: 2dvh;
-
-                        img {
-                            height: auto;
-                            width: 60dvw;
-                        }
-                    }
-                    &-col {
-                        width: 85dvw;
-                        margin-top: -5dvh;
-                        margin-left: 15dvw;
-                        padding: 1dvh 2dvw;
-                        border-radius: 4dvh 0 0 0;
-                        &-text {
-                            h2 {
-                                text-wrap: nowrap;
-                            }
-                            p {
-                                text-wrap: wrap;
-                                width: 70dvw;
-                            }
-                        }
-                        &-button {
-                            width: auto;
-                            height: auto;
-                            padding-left: 1dvh;
-                            margin-bottom: 5dvh;
-                            img {
-                                object-fit: contain;
-                            }
-                            .mercari {
-                                width: 15dvh;
-                                height: 7dvh;
-                                background-color: $white;
-                                border-radius: 2dvh;
-                            }
-                        }
-                    }
-                }
-            }
-            @media screen and (max-width: $max-width-smartphone) {
-                &-inner {
-                    display: flex;
-                    justify-content: start;
-                    align-items: center;
-                    flex-flow: column;
-
-                    &-background {
-                        width: 85dvw;
-                        height: 70dvh;
-                        border-radius: 4dvw;
-                    }
-                    &-img {
-                        height: 50dvh;
-                        width: auto;
-                        margin-top: 10dvw;
-                        img {
-                            height: 40dvh;
-                            width: auto;
-                        }
-                    }
-                    &-col {
-                        width: 85dvw;
-                        margin-top: -10dvh;
-                        margin-left: 15dvw;
-                        padding: 1dvh 2dvw;
-                        border-radius: 5dvw 0 0 0;
-                        &-text {
-                            h2 {
-                                text-wrap: nowrap;
-                            }
-                            p {
-                                text-wrap: wrap;
-                                width: 70dvw;
-                            }
-                        }
-                        &-button {
-                            width: auto;
-                            height: auto;
-                            padding-left: 1dvh;
-                            img {
-                                object-fit: contain;
-                            }
-                            .mercari {
-                                width: 25dvw;
-                                height: 10dvw;
-                                background-color: $white;
-                                border-radius: 2dvw;
-                            }
-                        }
-                    }
-                }
-            }
         }
 
-        .contact {
-            width: 100dvw;
-            height: auto;
-            background-color: $blue;
-            z-index: 30;
-            position: relative;
-
+        @media screen and (max-width: $max-width-smartphone) {
             &-inner {
-                position: relative;
-                top: 0;
                 display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                height: auto;
-                width: 90dvw;
-                margin-left: 5dvw;
-                // padding-top: 30dvh;
+                justify-content: start;
+                align-items: center;
+                flex-flow: column;
+
+                &-background {
+                    width: 85dvw;
+                    height: 70dvh;
+                    border-radius: 4dvw;
+                }
 
                 &-img {
+                    height: 50dvh;
                     width: auto;
-                    height: auto;
-                    position: absolute;
-                    right: 5dvh;
-                    bottom: 0;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: center;
+                    margin-top: 10dvw;
 
                     img {
-                        height: 80dvh;
-                        width: 80dvh;
-                        object-fit: contain;
-                        object-position: 100% 90%;
-
-                        @media screen and (max-width: $max-width-tablet) {
-                            height: 70dvw;
-                            width: 70dvw;
-                        }
+                        height: 40dvh;
+                        width: auto;
                     }
                 }
 
                 &-col {
-                    padding: 1dvh 2dvh;
-                    width: auto;
-                    height: auto;
-                    margin-top: 10dvh;
-                    z-index: 40;
+                    width: 85dvw;
+                    margin-top: -10dvh;
+                    margin-left: 15dvw;
+                    padding: 1dvh 2dvw;
+                    border-radius: 5dvw 0 0 0;
 
                     &-text {
-                        h1 {
-                            width: 90dvw;
+                        h2 {
+                            text-wrap: nowrap;
+                        }
+
+                        p {
+                            text-wrap: wrap;
+                            width: 70dvw;
                         }
                     }
+
                     &-button {
                         width: auto;
                         height: auto;
-                        margin-top: 40dvh;
-                        margin-bottom: 20dvh;
-                        background-color: $white;
-                        border-radius: 2dvh;
-                        width: 40dvh;
-                        height: 10dvh;
-                        @media screen and (max-width: $max-width-tablet) {
-                            width: 30dvh;
-                            height: 10dvh;
-                            margin-bottom: 10dvw;
-                        }
-                        @media screen and (max-width: $max-width-smartphone) {
-                            width: 40dvw;
-                            height: 15dvw;
-                            margin-bottom: 0;
-                        }
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        a {
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
+                        padding-left: 1dvh;
 
-                            svg {
-                                width: 5dvh;
-                                height: 5dvh;
-                                margin-right: 1dvh;
-                                @media screen and (max-width: $max-width-tablet) {
-                                    width: 4dvh;
-                                    height: 4dvh;
-                                }
-                                @media screen and (max-width: $max-width-smartphone) {
-                                    width: 5dvw;
-                                    height: 5dvw;
-                                }
-                            }
-                            .text {
-                                width: auto;
-                                height: auto;
-                                color: $black;
-                                font-size: 3dvh;
-                                font-weight: bold;
-                                text-wrap: nowrap;
-                                @media screen and (max-width: $max-width-tablet) {
-                                    font-size: 3dvh;
-                                }
-                                @media screen and (max-width: $max-width-smartphone) {
-                                    font-size: 4dvw;
-                                }
-                            }
+                        img {
+                            object-fit: contain;
+                        }
+
+                        .mercari {
+                            width: 25dvw;
+                            height: 10dvw;
+                            background-color: $white;
+                            border-radius: 2dvw;
                         }
                     }
                 }
-            }
-        }
-
-        .company {
-            width: 100dvw;
-            height: auto;
-            background-color: $blue;
-            z-index: 30;
-            position: relative;
-
-            &-inner {
-                width: 100dvw;
-                height: auto;
-                display: flex;
-                flex-flow: column;
-                justify-content: center;
-                align-items: center;
-
-                .divider {
-                    width: 90dvw;
-                    height: 0.6dvh;
-                    border-radius: 0.3dvh;
-                    background-color: $white;
-                    margin: 10dvh 0;
-                }
-
-                &-text {
-                    width: 80dvw;
-
-                    p {
-                        text-wrap: wrap;
-                    }
-                }
-            }
-        }
-        .laptop {
-            display: block;
-        }
-        .tablet {
-            display: none;
-        }
-        .smartphone {
-            display: none;
-        }
-
-        @media screen and (max-width: 100dvh) {
-            .laptop {
-                display: none;
-            }
-            .tablet {
-                display: block;
-            }
-            .smartphone {
-                display: none;
-            }
-        }
-        @media screen and (max-width: 70dvh) {
-            .laptop {
-                display: none;
-            }
-            .tablet {
-                display: none;
-            }
-            .smartphone {
-                display: block;
             }
         }
     }
 
-    $page-indicator-width: 2dvh;
-    $page-indicator-height: 10dvh;
-    .page-indicator {
-        position: fixed;
-        z-index: 100;
-        bottom: 5dvh;
-        right: 4dvh;
+    .contact {
+        width: 100dvw;
+        height: auto;
+        background-color: $blue;
+        z-index: 30;
+        position: relative;
+
+        &-inner {
+            position: relative;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            height: auto;
+            width: 90dvw;
+            margin-left: 5dvw;
+            // padding-top: 30dvh;
+
+            &-img {
+                width: auto;
+                height: auto;
+                position: absolute;
+                right: 5dvh;
+                bottom: 0;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                img {
+                    height: 80dvh;
+                    width: 80dvh;
+                    object-fit: contain;
+                    object-position: 100% 90%;
+
+                    @media screen and (max-width: $max-width-tablet) {
+                        height: 70dvw;
+                        width: 70dvw;
+                    }
+                }
+            }
+
+            &-col {
+                padding: 1dvh 2dvh;
+                width: auto;
+                height: auto;
+                margin-top: 10dvh;
+                z-index: 40;
+
+                &-text {
+                    h1 {
+                        width: 90dvw;
+                    }
+                }
+
+                &-button {
+                    width: auto;
+                    height: auto;
+                    margin-top: 40dvh;
+                    margin-bottom: 20dvh;
+                    background-color: $white;
+                    border-radius: 2dvh;
+                    width: 40dvh;
+                    height: 10dvh;
+
+                    @media screen and (max-width: $max-width-tablet) {
+                        width: 30dvh;
+                        height: 10dvh;
+                        margin-bottom: 10dvw;
+                    }
+
+                    @media screen and (max-width: $max-width-smartphone) {
+                        width: 40dvw;
+                        height: 15dvw;
+                        margin-bottom: 0;
+                    }
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        svg {
+                            width: 5dvh;
+                            height: 5dvh;
+                            margin-right: 1dvh;
+
+                            @media screen and (max-width: $max-width-tablet) {
+                                width: 4dvh;
+                                height: 4dvh;
+                            }
+
+                            @media screen and (max-width: $max-width-smartphone) {
+                                width: 5dvw;
+                                height: 5dvw;
+                            }
+                        }
+
+                        .text {
+                            width: auto;
+                            height: auto;
+                            color: $black;
+                            font-size: 3dvh;
+                            font-weight: bold;
+                            text-wrap: nowrap;
+
+                            @media screen and (max-width: $max-width-tablet) {
+                                font-size: 3dvh;
+                            }
+
+                            @media screen and (max-width: $max-width-smartphone) {
+                                font-size: 4dvw;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .company {
+        width: 100dvw;
+        height: auto;
+        background-color: $blue;
+        z-index: 30;
+        position: relative;
+
+        &-inner {
+            width: 100dvw;
+            height: auto;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+
+            .divider {
+                width: 90dvw;
+                height: 0.6dvh;
+                border-radius: 0.3dvh;
+                background-color: $white;
+                margin: 10dvh 0;
+            }
+
+            &-text {
+                width: 80dvw;
+
+                p {
+                    text-wrap: wrap;
+                }
+            }
+        }
+    }
+
+    .laptop {
+        display: block;
+    }
+
+    .tablet {
+        display: none;
+    }
+
+    .smartphone {
+        display: none;
+    }
+
+    @media screen and (max-width: 100dvh) {
+        .laptop {
+            display: none;
+        }
+
+        .tablet {
+            display: block;
+        }
+
+        .smartphone {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 70dvh) {
+        .laptop {
+            display: none;
+        }
+
+        .tablet {
+            display: none;
+        }
+
+        .smartphone {
+            display: block;
+        }
+    }
+}
+
+$page-indicator-width: 2dvh;
+$page-indicator-height: 10dvh;
+
+.page-indicator {
+    position: fixed;
+    z-index: 100;
+    bottom: 5dvh;
+    right: 4dvh;
+    width: $page-indicator-width;
+    height: $page-indicator-height;
+    display: flex;
+
+    &-inner {
         width: $page-indicator-width;
         height: $page-indicator-height;
         display: flex;
-        &-inner {
+        justify-content: center;
+        align-items: center;
+
+        &-col {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
             width: $page-indicator-width;
             height: $page-indicator-height;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            &-col {
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                width: $page-indicator-width;
-                height: $page-indicator-height;
-                flex-flow: column;
-                &-circle {
-                    width: 1dvh;
-                    height: 1dvh;
-                    border-radius: 50%;
-                    background-color: $white;
-                    margin: 0 1dvh;
-                }
+            flex-flow: column;
+
+            &-circle {
+                width: 1dvh;
+                height: 1dvh;
+                border-radius: 50%;
+                background-color: $white;
+                margin: 0 1dvh;
             }
         }
     }
@@ -1250,23 +1525,29 @@ footer {
             justify-content: space-between;
             height: auto;
             flex-wrap: wrap;
+
             a {
                 height: auto;
+
                 img {
                     height: 10dvh;
                 }
             }
+
             @media screen and (max-width: $max-width-tablet) {
                 a {
                     height: 8dvw;
+
                     img {
                         height: 8dvw;
                     }
                 }
             }
+
             @media screen and (max-width: $max-width-smartphone) {
                 a {
                     height: 10dvw;
+
                     img {
                         height: 10dvw;
                     }
@@ -1280,21 +1561,26 @@ footer {
 
                 a {
                     margin: 1dvh;
+
                     img {
                         height: 10dvh;
                     }
                 }
+
                 @media screen and (max-width: $max-width-tablet) {
                     a {
                         margin: 1dvh;
+
                         img {
                             height: 8dvw;
                         }
                     }
                 }
+
                 @media screen and (max-width: $max-width-smartphone) {
                     a {
                         margin: 1dvh;
+
                         img {
                             height: 10dvw;
                         }
@@ -1307,4 +1593,17 @@ footer {
             margin-bottom: 1dvh;
         }
     }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(2dvh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 }

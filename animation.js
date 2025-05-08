@@ -288,3 +288,58 @@ main_inner.addEventListener('scroll', function () {
     }
 });
 
+// ハンバーガーメニューの実装
+const hamburger = document.querySelector('.hamburger');
+const overlay = document.querySelector('.overlay');
+const menuItems = document.querySelectorAll('.overlay-menu li');
+
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    overlay.classList.toggle('active');
+
+    // メニュー項目のアニメーション
+    menuItems.forEach((item, index) => {
+        if (item.style.animation) {
+            item.style.animation = '';
+        } else {
+            item.style.animation = `fadeInUp 0.3s ease forwards ${index * 0.1}s`;
+        }
+    });
+});
+
+// オーバーレイ内のリンクをクリックしたときにメニューを閉じる
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        overlay.classList.remove('active');
+        menuItems.forEach(item => {
+            item.style.animation = '';
+        });
+    });
+});
+// ハンバーガーメニューとオーバーレイの実装
+const closeBtn = document.querySelector('.close-btn');
+
+function closeOverlay() {
+    hamburger.classList.remove('active');
+    overlay.classList.remove('active');
+    menuItems.forEach(item => {
+        item.style.animation = '';
+    });
+}
+
+function openOverlay() {
+    hamburger.classList.add('active');
+    overlay.classList.add('active');
+    menuItems.forEach((item, index) => {
+        item.style.animation = `fadeInUp 0.3s ease forwards ${index * 0.1}s`;
+    });
+}
+
+hamburger.addEventListener('click', openOverlay);
+closeBtn.addEventListener('click', closeOverlay);
+
+// オーバーレイ内のリンクをクリックしたときにメニューを閉じる
+menuItems.forEach(item => {
+    item.addEventListener('click', closeOverlay);
+});
