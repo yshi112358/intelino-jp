@@ -1058,13 +1058,94 @@ main {
         }
     }
 
+    .LP {
+        width: 100dvw;
+        height: auto;
+        background-color: $yellow;
+        position: relative;
+        z-index: 30;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
+        &-inner {
+            width: 100dvw;
+            height: auto;
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column;
+            margin-bottom: 20dvw;
+
+            &-text {
+                position: relative;
+                width: 100dvw;
+                height: auto;
+                color: $blue;
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: center;
+
+                &-1 {
+                    font-size: 8dvh;
+                    font-weight: bold;
+                    height: auto;
+                    width: auto;
+
+                    @media screen and (max-width: $max-width-tablet) {
+                        font-size: 10dvw;
+                    }
+
+                    @media screen and (max-width: $max-width-smartphone) {
+                        font-size: 12dvw;
+                    }
+                }
+
+                &-2 {
+                    margin-top: 1dvh;
+                    font-size: 6dvh;
+                    font-weight: bold;
+                    height: auto;
+                    width: auto;
+
+                    @media screen and (max-width: $max-width-tablet) {
+                        font-size: 6dvw;
+                        margin-top: 1dvw;
+                    }
+
+                    @media screen and (max-width: $max-width-smartphone) {
+                        font-size: 8dvw;
+                        margin-top: 2dvw;
+                    }
+                }
+            }
+
+            &-img {
+                width: 80dvw;
+                height: auto;
+                position: relative;
+                border-radius: 3dvh;
+                margin: 3dvw 10dvw 0 10dvw;
+
+                @media screen and (max-width: $max-width-tablet) {
+                    width: 90dvw;
+                    margin: 5dvw 5dvw 0 5dvw;
+                }
+            }
+        }
+    }
+
     .purchase {
         width: 100dvw;
         height: auto;
         background-color: $blue;
         position: relative;
         z-index: 30;
-        padding-top: 10dvh;
+        padding-top: 20dvw; //LPの余白と同じにしている
 
         &-inner {
             display: flex;
@@ -1072,7 +1153,6 @@ main {
             align-items: center;
             height: auto;
             width: 100dvw;
-            margin-top: 5dvh;
 
             &-background {
                 background-color: $white;
@@ -1126,24 +1206,52 @@ main {
                     }
                 }
 
-                &-button {
+                &-ec {
                     position: relative;
                     width: auto;
                     height: auto;
-                    padding-left: 1dvh;
-                    margin-bottom: 5dvh;
+                    margin-top: 10dvh;
 
-                    img {
-                        object-fit: contain;
+                    &-text {
+                        p {
+                            text-wrap: nowrap;
+                            font-size: 2dvh;
+                            margin-bottom: 1dvh;
+                        }
+
+                        position: relative;
+                        width: auto;
+                        height: auto;
                     }
 
-                    .mercari {
-                        width: 20dvh;
-                        height: 10dvh;
-                        background-color: $white;
-                        border-radius: 2dvh;
+                    &-button {
+                        position: relative;
+                        width: auto;
+                        height: auto;
+                        padding-left: 1dvh;
+                        margin-bottom: 5dvh;
+
+                        img {
+                            object-fit: contain;
+                        }
+
+                        .ec-button {
+                            width: 20dvh;
+                            height: 10dvh;
+                            background-color: $white;
+                            border-radius: 2dvh;
+                            margin-right: 1vh;
+                        }
+
+                        .funding-button {
+                            width: 40dvh;
+                            height: 10dvh;
+                            background-color: $white;
+                            border-radius: 2dvh;
+                        }
                     }
                 }
+
             }
         }
 
@@ -1189,23 +1297,49 @@ main {
                         }
                     }
 
-                    &-button {
+                    &-ec {
+                        position: relative;
                         width: auto;
                         height: auto;
-                        padding-left: 1dvh;
-                        margin-bottom: 5dvh;
 
-                        img {
-                            object-fit: contain;
+                        &-text {
+                            position: relative;
+                            width: auto;
+                            height: auto;
+
+                            p {
+                                font-size: 2dvw;
+                                margin-bottom: 1dvw;
+                            }
                         }
 
-                        .mercari {
-                            width: 15dvh;
-                            height: 7dvh;
-                            background-color: $white;
-                            border-radius: 2dvh;
+                        &-button {
+                            width: auto;
+                            height: auto;
+                            padding-left: 1dvh;
+                            margin-bottom: 5dvh;
+
+                            img {
+                                object-fit: contain;
+                            }
+
+                            .ec-button {
+                                width: 15dvh;
+                                height: 7dvh;
+                                background-color: $white;
+                                border-radius: 2dvh;
+                            }
+
+                            .funding-button {
+                                width: 30dvh;
+                                height: 7dvh;
+                                background-color: $white;
+                                border-radius: 2dvh;
+                            }
                         }
                     }
+
+
                 }
             }
         }
@@ -1252,20 +1386,44 @@ main {
                         }
                     }
 
-                    &-button {
+                    &-ec {
+                        position: relative;
                         width: auto;
                         height: auto;
-                        padding-left: 1dvh;
 
-                        img {
-                            object-fit: contain;
+                        &-text {
+                            position: relative;
+                            width: auto;
+                            height: auto;
+
+                            p {
+                                font-size: 3dvw;
+                                margin-bottom: 2dvw;
+                            }
                         }
 
-                        .mercari {
-                            width: 25dvw;
-                            height: 10dvw;
-                            background-color: $white;
-                            border-radius: 2dvw;
+                        &-button {
+                            width: auto;
+                            height: auto;
+                            padding-left: 1dvh;
+
+                            img {
+                                object-fit: contain;
+                            }
+
+                            .ec-button {
+                                width: 25dvw;
+                                height: 10dvw;
+                                background-color: $white;
+                                border-radius: 2dvw;
+                            }
+
+                            .funding-button {
+                                width: 50dvw;
+                                height: 10dvw;
+                                background-color: $white;
+                                border-radius: 2dvw;
+                            }
                         }
                     }
                 }

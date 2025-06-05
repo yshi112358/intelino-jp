@@ -910,13 +910,91 @@ main .main-inner .achievements .awards-inner-awards-row img {
     width: 10dvw;
   }
 }
+main .main-inner .LP {
+  width: 100dvw;
+  height: auto;
+  background-color: #ffd400;
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .main-inner .LP-inner {
+  width: 100dvw;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  margin-bottom: 20dvw;
+}
+main .main-inner .LP-inner-text {
+  position: relative;
+  width: 100dvw;
+  height: auto;
+  color: #00afd7;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+main .main-inner .LP-inner-text-1 {
+  font-size: 8dvh;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .LP-inner-text-1 {
+    font-size: 10dvw;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .LP-inner-text-1 {
+    font-size: 12dvw;
+  }
+}
+main .main-inner .LP-inner-text-2 {
+  margin-top: 1dvh;
+  font-size: 6dvh;
+  font-weight: bold;
+  height: auto;
+  width: auto;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .LP-inner-text-2 {
+    font-size: 6dvw;
+    margin-top: 1dvw;
+  }
+}
+@media screen and (max-width: 70dvh) {
+  main .main-inner .LP-inner-text-2 {
+    font-size: 8dvw;
+    margin-top: 2dvw;
+  }
+}
+main .main-inner .LP-inner-img {
+  width: 80dvw;
+  height: auto;
+  position: relative;
+  border-radius: 3dvh;
+  margin: 3dvw 10dvw 0 10dvw;
+}
+@media screen and (max-width: 100dvh) {
+  main .main-inner .LP-inner-img {
+    width: 90dvw;
+    margin: 5dvw 5dvw 0 5dvw;
+  }
+}
 main .main-inner .purchase {
   width: 100dvw;
   height: auto;
   background-color: #00afd7;
   position: relative;
   z-index: 30;
-  padding-top: 10dvh;
+  padding-top: 20dvw;
 }
 main .main-inner .purchase-inner {
   display: flex;
@@ -924,7 +1002,6 @@ main .main-inner .purchase-inner {
   align-items: center;
   height: auto;
   width: 100dvw;
-  margin-top: 5dvh;
 }
 main .main-inner .purchase-inner-background {
   background-color: #ffffff;
@@ -971,19 +1048,42 @@ main .main-inner .purchase-inner-col-text p {
   text-wrap: wrap;
   width: 40dvw;
 }
-main .main-inner .purchase-inner-col-button {
+main .main-inner .purchase-inner-col-ec {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin-top: 10dvh;
+}
+main .main-inner .purchase-inner-col-ec-text {
+  position: relative;
+  width: auto;
+  height: auto;
+}
+main .main-inner .purchase-inner-col-ec-text p {
+  text-wrap: nowrap;
+  font-size: 2dvh;
+  margin-bottom: 1dvh;
+}
+main .main-inner .purchase-inner-col-ec-button {
   position: relative;
   width: auto;
   height: auto;
   padding-left: 1dvh;
   margin-bottom: 5dvh;
 }
-main .main-inner .purchase-inner-col-button img {
+main .main-inner .purchase-inner-col-ec-button img {
   -o-object-fit: contain;
      object-fit: contain;
 }
-main .main-inner .purchase-inner-col-button .mercari {
+main .main-inner .purchase-inner-col-ec-button .ec-button {
   width: 20dvh;
+  height: 10dvh;
+  background-color: #ffffff;
+  border-radius: 2dvh;
+  margin-right: 1vh;
+}
+main .main-inner .purchase-inner-col-ec-button .funding-button {
+  width: 40dvh;
   height: 10dvh;
   background-color: #ffffff;
   border-radius: 2dvh;
@@ -1023,18 +1123,38 @@ main .main-inner .purchase-inner-col-button .mercari {
     text-wrap: wrap;
     width: 70dvw;
   }
-  main .main-inner .purchase-inner-col-button {
+  main .main-inner .purchase-inner-col-ec {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  main .main-inner .purchase-inner-col-ec-text {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  main .main-inner .purchase-inner-col-ec-text p {
+    font-size: 2dvw;
+    margin-bottom: 1dvw;
+  }
+  main .main-inner .purchase-inner-col-ec-button {
     width: auto;
     height: auto;
     padding-left: 1dvh;
     margin-bottom: 5dvh;
   }
-  main .main-inner .purchase-inner-col-button img {
+  main .main-inner .purchase-inner-col-ec-button img {
     -o-object-fit: contain;
        object-fit: contain;
   }
-  main .main-inner .purchase-inner-col-button .mercari {
+  main .main-inner .purchase-inner-col-ec-button .ec-button {
     width: 15dvh;
+    height: 7dvh;
+    background-color: #ffffff;
+    border-radius: 2dvh;
+  }
+  main .main-inner .purchase-inner-col-ec-button .funding-button {
+    width: 30dvh;
     height: 7dvh;
     background-color: #ffffff;
     border-radius: 2dvh;
@@ -1075,17 +1195,37 @@ main .main-inner .purchase-inner-col-button .mercari {
     text-wrap: wrap;
     width: 70dvw;
   }
-  main .main-inner .purchase-inner-col-button {
+  main .main-inner .purchase-inner-col-ec {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  main .main-inner .purchase-inner-col-ec-text {
+    position: relative;
+    width: auto;
+    height: auto;
+  }
+  main .main-inner .purchase-inner-col-ec-text p {
+    font-size: 3dvw;
+    margin-bottom: 2dvw;
+  }
+  main .main-inner .purchase-inner-col-ec-button {
     width: auto;
     height: auto;
     padding-left: 1dvh;
   }
-  main .main-inner .purchase-inner-col-button img {
+  main .main-inner .purchase-inner-col-ec-button img {
     -o-object-fit: contain;
        object-fit: contain;
   }
-  main .main-inner .purchase-inner-col-button .mercari {
+  main .main-inner .purchase-inner-col-ec-button .ec-button {
     width: 25dvw;
+    height: 10dvw;
+    background-color: #ffffff;
+    border-radius: 2dvw;
+  }
+  main .main-inner .purchase-inner-col-ec-button .funding-button {
+    width: 50dvw;
     height: 10dvw;
     background-color: #ffffff;
     border-radius: 2dvw;

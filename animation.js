@@ -73,11 +73,7 @@ const tl_about_end = gsap.timeline({
     }
 });
 
-tl_about_end.to('.about-inner-cover-detail', {
-    opacity: 0,
-}, "<").to('.about-inner-cover-arrow', {
-    opacity: 0,
-}, "<").to('.about-inner-text', {
+tl_about_end.to('.about-inner-text', {
     opacity: 0,
 }, "<").to('.about-inner-img', {
     opacity: 0,
@@ -207,14 +203,31 @@ function setAwardSnap() {
     document.querySelector('.achievements-inner').style.top = String(-value) + "px";
 }
 
+const tl_lp_start = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.LP',
+        start: 'top center+=30%',
+        end: 'center center',
+        // markers: true,
+        toggleActions: 'play none none reverse',
+    }
+});
+tl_lp_start.fromTo('.LP-inner', {
+    autoAlpha: 0,
+    y: 100,
+}, {
+    autoAlpha: 1,
+    y: 0,
+}, "LP-inner");
+
 
 const tl_purchase_start = gsap.timeline({
     scrollTrigger: {
         trigger: '.purchase',
-        start: 'top center',
+        start: 'top center+=30%',
         end: 'top center',
         // markers: true,
-        scrub: 0.7,
+        toggleActions: 'play none none reverse',
     }
 });
 
@@ -224,14 +237,7 @@ tl_purchase_start.fromTo('.purchase-inner',
         y: 100,
     },
     {
-        duration: 0.5,
-        autoAlpha: 1,
-        y: 0,
-    }, "purchase-inner").fromTo('.purchase-inner-text', {
-        autoAlpha: 0,
-        y: 100,
-    }, {
-        duration: 0.5,
+        duration: 0.8,
         autoAlpha: 1,
         y: 0,
     }, "purchase-inner");
