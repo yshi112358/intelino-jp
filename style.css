@@ -727,7 +727,6 @@ main .main-inner .learn-inner-button {
   display: block;
   position: relative;
   top: 40dvh;
-  left: 5dvh;
   z-index: 30;
   background-color: #00afd7;
   border-radius: 2dvh;
@@ -742,8 +741,10 @@ main .main-inner .learn-inner-button a {
   justify-content: center;
   width: 100%;
   height: 100%;
+  font-size: 3dvh;
 }
 main .main-inner .learn-inner-button a img {
+  margin-top: 0.2dvh;
   width: 4dvh;
   height: 4dvh;
   margin-right: 1dvh;
@@ -756,16 +757,16 @@ main .main-inner .learn-inner-button a img {
     left: 0;
   }
   main .main-inner .learn-inner-button {
-    width: 30dvw;
-    height: 10dvw;
-    border-radius: 2dvw;
+    width: 30dvh;
+    height: 8dvh;
+    border-radius: 2dvh;
   }
   main .main-inner .learn-inner-button a {
-    font-size: 4dvw;
+    font-size: 3dvh;
   }
   main .main-inner .learn-inner-button a img {
-    width: 4dvw;
-    height: 4dvw;
+    width: 4dvh;
+    height: 4dvh;
   }
 }
 @media screen and (max-width: 70dvh) {
