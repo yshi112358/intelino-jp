@@ -723,12 +723,49 @@ main .main-inner .learn-inner-text {
   left: 5dvh;
   z-index: 30;
 }
+main .main-inner .learn-inner-button {
+  display: block;
+  position: relative;
+  top: 40dvh;
+  left: 5dvh;
+  z-index: 30;
+  background-color: #00afd7;
+  border-radius: 2dvh;
+  color: #ffffff;
+  width: 30dvh;
+  height: 8dvh;
+  margin: 0 2dvw;
+}
+main .main-inner .learn-inner-button a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+main .main-inner .learn-inner-button a img {
+  width: 4dvh;
+  height: 4dvh;
+  margin-right: 1dvh;
+}
 @media screen and (max-width: 100dvh) {
   main .main-inner .learn-inner {
     width: 80dvw;
   }
   main .main-inner .learn-inner-text {
     left: 0;
+  }
+  main .main-inner .learn-inner-button {
+    width: 30dvw;
+    height: 10dvw;
+    border-radius: 2dvw;
+  }
+  main .main-inner .learn-inner-button a {
+    font-size: 4dvw;
+  }
+  main .main-inner .learn-inner-button a img {
+    width: 4dvw;
+    height: 4dvw;
   }
 }
 @media screen and (max-width: 70dvh) {
@@ -737,6 +774,18 @@ main .main-inner .learn-inner-text {
   }
   main .main-inner .learn-inner-text {
     left: 0;
+  }
+  main .main-inner .learn-inner-button {
+    width: 30dvw;
+    height: 10dvw;
+    border-radius: 2dvw;
+  }
+  main .main-inner .learn-inner-button a {
+    font-size: 4dvw;
+  }
+  main .main-inner .learn-inner-button a img {
+    width: 4dvw;
+    height: 4dvw;
   }
 }
 main .main-inner .learn-inner2 {
